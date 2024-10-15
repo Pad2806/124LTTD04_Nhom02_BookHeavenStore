@@ -104,7 +104,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/childbook"
+                        android:src="@drawable/book1"
                         android:scaleType="fitXY"/>
                 </LinearLayout>
 
@@ -128,7 +128,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="200.000 đ"
+                            android:text="100000 đ"
                             android:fontFamily="@font/montserrat_bold"
                             android:textColor="@color/ctsach"
                             android:textSize="20sp"/>
@@ -191,13 +191,14 @@
                         android:textColor="@color/black"
                         android:gravity="center_vertical"/>
                     <TextView
+                        android:id="@+id/price"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="100.000 đ"
+                        android:text="100000 đ"
                         android:fontFamily="@font/montserrat_bold"
                         android:textSize="20sp"
-                        android:textColor="@color/ctsach"
+                        android:textColor="@color/pricetext"
                         android:gravity="center|end"/>
                 </LinearLayout>
                 <LinearLayout
@@ -222,7 +223,7 @@
                         android:text="15.000 đ"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_bold"
-                        android:textColor="@color/ctsach"
+                        android:textColor="@color/pricetext"
                         android:gravity="center|end"/>
                 </LinearLayout>
                 <LinearLayout
@@ -247,7 +248,7 @@
                         android:text="20.000 đ"
                         android:textSize="20sp"
                         android:fontFamily="@font/montserrat_bold"
-                        android:textColor="@color/ctsach"
+                        android:textColor="@color/pricetext"
                         android:gravity="center|end"/>
                 </LinearLayout>
             </LinearLayout>
@@ -333,28 +334,28 @@
                     android:textColor="@color/black"
                     android:gravity="center_vertical"/>
                 <TextView
+                    android:id="@+id/totalPrice"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="20.000 đ"
                     android:textSize="24sp"
                     android:fontFamily="@font/montserrat_bold"
-                    android:textColor="@color/ctsach"
+                    android:textColor="@color/pricetext"
                     android:gravity="center|end"/>
             </LinearLayout>
         </LinearLayout>
-        <Button
+        <TextView
             android:id="@+id/orderBook"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="Đặt hàng"
             android:layout_weight="1"
+            android:textAlignment="center"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/bgbtn"
+            android:paddingVertical="10dp"
+            android:background="@drawable/btn_bg"
             android:textColor="@color/colortext"
             android:textSize="26sp" />
     </LinearLayout>
-
-
-
 </LinearLayout>

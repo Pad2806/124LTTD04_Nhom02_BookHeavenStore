@@ -28,7 +28,7 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center_vertical"
                 android:paddingStart="10dp"
-                android:text="Xin chào ... "
+                android:text="Xin chào DNTGroup "
                 android:textColor="@color/colortext"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -43,14 +43,13 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/background"
             android:drawableStart="@drawable/search"
-            android:drawablePadding="10dp"
-            android:padding="10dp"
+            android:drawablePadding="15dp"
+            android:padding="5dp"
             android:fontFamily="@font/montserrat_medium"
             android:hint="Tìm sách ..."
-            android:paddingStart="10dp"
             android:textColor="@color/blurtext"
             android:textSize="20sp"
             tools:ignore="NestedWeights"/>
@@ -85,13 +84,12 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="160dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:layout_height="180dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:id="@+id/hot_item"
-                        android:layout_width="100dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
@@ -110,23 +108,26 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="25"
-                            android:src="@drawable/childbook" />
+                            android:src="@drawable/book1" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Tên sách"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="A Call To Return"
+                            android:maxLines="1"
                             android:textAlignment="center"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Giá bán"
+                            android:text="100.000 đ"
                             android:textAlignment="center"
                             android:textColor="@color/pricetext" />
 
@@ -135,13 +136,11 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Đã bán :..."
+                            android:text="Đã bán: 5103"
                             android:textAlignment="center" />
                     </LinearLayout>
-
                     <LinearLayout
-                        android:id="@+id/hot_item2"
-                        android:layout_width="100dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
@@ -149,7 +148,9 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/home_rounded_bg_img"
                         android:elevation="4dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -158,23 +159,26 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="25"
-                            android:src="@drawable/childbook" />
+                            android:src="@drawable/book2" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Tên sách"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Committed"
+                            android:maxLines="1"
                             android:textAlignment="center"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Giá bán"
+                            android:text="164.000 đ"
                             android:textAlignment="center"
                             android:textColor="@color/pricetext" />
 
@@ -183,13 +187,11 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Đã bán :..."
+                            android:text="Đã bán :7513"
                             android:textAlignment="center" />
                     </LinearLayout>
-
                     <LinearLayout
-                        android:id="@+id/hot_item3"
-                        android:layout_width="100dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
@@ -197,7 +199,9 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/home_rounded_bg_img"
                         android:elevation="4dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -206,14 +210,26 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="25"
-                            android:src="@drawable/childbook" />
+                            android:src="@drawable/book3" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="EQUIP"
+                            android:maxLines="1"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Giá bán"
+                            android:text="248.000 đ"
                             android:textAlignment="center"
                             android:textColor="@color/pricetext" />
 
@@ -225,9 +241,8 @@
                             android:text="Đã bán :..."
                             android:textAlignment="center" />
                     </LinearLayout>
-
                     <LinearLayout
-                        android:layout_width="100dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
@@ -235,7 +250,9 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/home_rounded_bg_img"
                         android:elevation="4dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -244,23 +261,26 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="25"
-                            android:src="@drawable/childbook" />
+                            android:src="@drawable/book4" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Tên sách"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Conquering Mountains"
+                            android:maxLines="1"
                             android:textAlignment="center"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Giá bán"
+                            android:text="175.000 đ"
                             android:textAlignment="center"
                             android:textColor="@color/pricetext" />
 
@@ -269,12 +289,11 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Đã bán :..."
+                            android:text="Đã bán :9462"
                             android:textAlignment="center" />
                     </LinearLayout>
-
                     <LinearLayout
-                        android:layout_width="100dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
@@ -282,7 +301,9 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/home_rounded_bg_img"
                         android:elevation="4dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -291,23 +312,26 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="25"
-                            android:src="@drawable/childbook" />
+                            android:src="@drawable/book5" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Tên sách"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Bernice Mewonge"
+                            android:maxLines="1"
                             android:textAlignment="center"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Giá bán"
+                            android:text="325000 đ"
                             android:textAlignment="center"
                             android:textColor="@color/pricetext" />
 
@@ -316,12 +340,11 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Đã bán :..."
+                            android:text="Đã bán :2018"
                             android:textAlignment="center" />
                     </LinearLayout>
-
                     <LinearLayout
-                        android:layout_width="100dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
@@ -329,7 +352,9 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/home_rounded_bg_img"
                         android:elevation="4dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -338,32 +363,26 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="25"
-                            android:src="@drawable/childbook" />
+                            android:src="@drawable/book6" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Tên sách"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Hanging Out With Jesus"
+                            android:maxLines="1"
                             android:textAlignment="center"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Tên sách"
-                            android:textAlignment="center"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Giá bán"
+                            android:text="210000 đ"
                             android:textAlignment="center"
                             android:textColor="@color/pricetext" />
 
@@ -372,9 +391,10 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/montserrat_bold"
-                            android:text="Đã bán :..."
+                            android:text="Đã bán :1947"
                             android:textAlignment="center" />
                     </LinearLayout>
+
 
                 </LinearLayout>
 

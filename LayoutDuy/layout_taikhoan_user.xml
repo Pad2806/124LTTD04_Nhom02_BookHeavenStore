@@ -56,7 +56,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/childbook"
+                            android:src="@drawable/ava4"
                             app:shapeAppearanceOverlay="@style/AvatarStyle" />
                         <TextView
                             android:layout_width="match_parent"
@@ -290,14 +290,6 @@
                             android:textSize="18sp"
                             android:textColor="@color/colortext"/>
                     </LinearLayout>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Thay đổi thông tin"
-                        android:gravity="right"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textSize="18sp"
-                        android:textColor="@color/search"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -319,6 +311,7 @@
                         android:layout_marginTop="15dp"
                         android:orientation="vertical">
                         <FrameLayout
+                            android:id="@+id/orderHistory"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
@@ -328,7 +321,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textAlignment="center"
+                                android:layout_marginStart="40dp"
                                 android:text="Lịch sử đặt hàng"
                                 android:textSize="24sp"
                                 android:fontFamily="@font/montserrat_bold"
@@ -341,6 +334,7 @@
                                 android:src="@drawable/iconshoppingcart"/>
                         </FrameLayout>
                         <FrameLayout
+                            android:id="@+id/buyHistory"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
@@ -350,7 +344,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textAlignment="center"
+                                android:layout_marginStart="40dp"
                                 android:text="Lịch sử mua hàng"
                                 android:textSize="24sp"
                                 android:fontFamily="@font/montserrat_bold"
@@ -370,10 +364,11 @@
                             android:layout_gravity="center"
                             android:background="@drawable/bgctkh">
                             <TextView
+                                android:id="@+id/updateInfo"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="Cài đặt"
+                                android:layout_marginStart="40dp"
+                                android:text="Thay đổi thông tin"
                                 android:textSize="24sp"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:textColor="@color/white"/>
@@ -382,9 +377,10 @@
                                 android:layout_height="35dp"
                                 android:layout_gravity="end"
                                 android:layout_marginEnd="25dp"
-                                android:src="@drawable/icon_setting"/>
+                                android:src="@drawable/icon_info"/>
                         </FrameLayout>
                         <FrameLayout
+                            android:id="@+id/logoutBtn"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
