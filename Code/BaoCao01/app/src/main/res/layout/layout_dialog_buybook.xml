@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
+    android:background="@drawable/dialog_ordersuccess_bg">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_paysuccess"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đã đặt hàng thành công !"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textAlignment="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đơn hàng sẽ không thể huỷ sau 12h!!!"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/buyAgree"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Đồng ý"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingHorizontal="50dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/btn_bg"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"/>
+</LinearLayout>
