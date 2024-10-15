@@ -21,10 +21,11 @@
             android:textColor="@color/white">
         </TextView>
         <ImageView
+            android:id="@id/icon_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="10dp"
-            android:src="@drawable/backspace"></ImageView>
+            android:src="@drawable/backspace"/>
     </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,96 +33,10 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:layout_weight="13.9"
-        android:weightSum="14"
         android:orientation="vertical">
-        <LinearLayout
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:text="Doanh thu trong ngày"
-                android:fontFamily="@font/montserrat_bold"
-                android:textSize="24sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="15dp"
-                android:text="15.000.000 đ"
-                android:fontFamily="@font/montserrat_bold"
-                android:textSize="32sp"
-                android:textAlignment="center"/>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="15dp"
-                    android:layout_weight="1">
-                    <TextView
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:background="@drawable/background"
-                        android:text="Theo tháng"
-                        android:textSize="18sp"
-                        android:paddingLeft="15dp"
-                        android:textColor="@color/colortext">
-                    </TextView>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="end"
-                        android:paddingRight="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:src="@drawable/sort"/>
-                </FrameLayout>
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="1">
-                    <TextView
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:background="@drawable/background"
-                        android:text="Theo sản phẩm"
-                        android:textSize="18sp"
-                        android:paddingLeft="15dp"
-                        android:textColor="@color/colortext">
-                    </TextView>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="end"
-                        android:paddingRight="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:src="@drawable/sort"/>
-                </FrameLayout>
-            </LinearLayout>
-        </LinearLayout>
+
         <ScrollView
+            android:id="@+id/scrollview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scrollbars="none"
@@ -134,6 +49,95 @@
                 android:layout_weight="14"
                 android:orientation="vertical">
                 <LinearLayout
+                    android:id="@+id/revenueItem"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Doanh thu trong ngày"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="24sp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="15dp"
+                        android:text="1.533.667 đ"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="32sp"
+                        android:textAlignment="center"/>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:background="@drawable/background"
+                                android:text="Theo tháng"
+                                android:textSize="18sp"
+                                android:paddingLeft="15dp"
+                                android:textColor="@color/colortext">
+                            </TextView>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:paddingRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/sort"/>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:background="@drawable/background"
+                                android:text="Theo sản phẩm"
+                                android:textSize="18sp"
+                                android:paddingLeft="15dp"
+                                android:textColor="@color/colortext">
+                            </TextView>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:paddingRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/sort"/>
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_marginBottom="20dp"
@@ -149,7 +153,7 @@
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
                         android:layout_weight="1"
-                        android:text="dd/mm/yyyy"
+                        android:text="15/10/2024"
                         android:textSize="16sp"
                         android:fontFamily="@font/montserrat_medium"/>
                     <LinearLayout
@@ -171,7 +175,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="123456789"
+                            android:text="0001548475"
                             android:textColor="@color/colortext"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -195,7 +199,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="Tiền mặt"
+                            android:text="Trực tuyến"
                             android:textColor="@color/colortext"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -220,7 +224,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="309.000 đ"
+                            android:text="315.799 đ"
                             android:textColor="@color/ctsach"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -243,7 +247,7 @@
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
                         android:layout_weight="1"
-                        android:text="dd/mm/yyyy"
+                        android:text="15/10/2024"
                         android:textSize="16sp"
                         android:fontFamily="@font/montserrat_medium"/>
                     <LinearLayout
@@ -265,7 +269,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="123456789"
+                            android:text="0001548476"
                             android:textColor="@color/colortext"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -289,7 +293,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="Tiền mặt"
+                            android:text="Trực tuyến"
                             android:textColor="@color/colortext"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -314,7 +318,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="309.000 đ"
+                            android:text="217.869 đ"
                             android:textColor="@color/ctsach"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -337,7 +341,7 @@
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
                         android:layout_weight="1"
-                        android:text="dd/mm/yyyy"
+                        android:text="15/10/2024"
                         android:textSize="16sp"
                         android:fontFamily="@font/montserrat_medium"/>
                     <LinearLayout
@@ -359,7 +363,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="123456789"
+                            android:text="0001548477"
                             android:textColor="@color/colortext"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -408,7 +412,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="309.000 đ"
+                            android:text="999.999 đ"
                             android:textColor="@color/ctsach"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -431,7 +435,7 @@
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
                         android:layout_weight="1"
-                        android:text="dd/mm/yyyy"
+                        android:text="14/10/2024"
                         android:textSize="16sp"
                         android:fontFamily="@font/montserrat_medium"/>
                     <LinearLayout
@@ -453,7 +457,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="123456789"
+                            android:text="0001548478"
                             android:textColor="@color/colortext"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -502,7 +506,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="309.000 đ"
+                            android:text="235.500 đ"
                             android:textColor="@color/ctsach"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -525,7 +529,7 @@
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
                         android:layout_weight="1"
-                        android:text="dd/mm/yyyy"
+                        android:text="14/10/2024"
                         android:textSize="16sp"
                         android:fontFamily="@font/montserrat_medium"/>
                     <LinearLayout
@@ -547,7 +551,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="123456789"
+                            android:text="0001548479"
                             android:textColor="@color/colortext"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -571,7 +575,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="Tiền mặt"
+                            android:text="Trực tuyến"
                             android:textColor="@color/colortext"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>
@@ -596,7 +600,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center_vertical|end"
                             android:layout_weight="1"
-                            android:text="309.000 đ"
+                            android:text="761.000 đ"
                             android:textColor="@color/ctsach"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"/>

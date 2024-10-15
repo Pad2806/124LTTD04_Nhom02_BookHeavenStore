@@ -1,53 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="15">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop= "10dp"
             android:layout_weight="12"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/childbook"
+                        android:src="@drawable/ava5"
                         app:shapeAppearanceOverlay="@style/AvatarStyle" />
+
                     <TextView
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/montserrat_bold"
                         android:paddingLeft="10dp"
                         android:text="DNTGroup"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:textSize="32sp"
                         android:textColor="@color/black"
-                        android:layout_gravity="center_vertical"/>
+                        android:textSize="32sp" />
+
                     <ImageView
+                        android:id="@+id/admin_logout"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center_vertical"
-                        android:src="@drawable/icons8_log_out_48"
-                        android:background="@color/gia"/>
+                        android:background="@drawable/logout_admin_bg"
+                        android:src="@drawable/icon_log_out" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -55,120 +64,140 @@
                     android:layout_marginBottom="10dp"
                     android:background="#000000" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
                     android:paddingBottom="20dp"
                     android:text="Dữ liệu trong ngày"
-                    android:fontFamily="@font/montserrat_bold"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:weightSum="3">
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:weightSum="2"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:weightSum="2">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingBottom="5dp"
-                            android:text="4.800.000"
-                            android:textSize="18sp"
                             android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="5dp"
+                            android:text="1.533.667"
+                            android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textAlignment="center"/>
+                            android:textSize="18sp" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
                             android:text="Doanh thu(đ)"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:textColor="@color/gray"
-                            android:textAlignment="center"/>
+                            android:textAlignment="center"
+                            android:textColor="@color/gray" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:weightSum="2"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:weightSum="2">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingBottom="5dp"
-                            android:text="60"
-                            android:textSize="18sp"
                             android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="5dp"
+                            android:text="12"
+                            android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textAlignment="center"/>
+                            android:textSize="18sp" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
                             android:text="Sản phẩm đã bán"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:textColor="@color/gray"
-                            android:textAlignment="center"/>
+                            android:textAlignment="center"
+                            android:textColor="@color/gray" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:weightSum="2"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:weightSum="2">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingBottom="5dp"
-                            android:text="50"
-                            android:textSize="18sp"
                             android:fontFamily="@font/montserrat_bold"
+                            android:paddingBottom="5dp"
+                            android:text="3"
+                            android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textAlignment="center"/>
+                            android:textSize="18sp" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Đơn hàng"
                             android:fontFamily="@font/montserrat_medium"
-                            android:textColor="@color/gray"
-                            android:textAlignment="center"/>
+                            android:text="Đơn hàng"
+                            android:textAlignment="center"
+                            android:textColor="@color/gray" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Bán chạy"
-                android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/black"
-                android:textSize="24sp"/>
+                android:textSize="24sp" />
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scrollbars="none">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="180dp"
                     android:orientation="horizontal">
+
                     <LinearLayout
-                        android:elevation="4dp"
-                        android:clickable="true"
-                        android:focusable="true"
+                        android:id="@+id/hot_item"
                         android:layout_width="110dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bolder_image_style"
-                        android:orientation="vertical">
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/home_rounded_bg_img"
+                        android:elevation="4dp"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -182,43 +211,45 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="A Call To Return"
+                            android:maxLines="1"
                             android:textAlignment="center"
-                            android:layout_weight="1"
-                            android:text="Tên sách"
-                            android:fontFamily="@font/montserrat_medium">
-
-                        </TextView>
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Giá bán"
-                            android:textAlignment="center">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="100.000 đ"
                             android:textAlignment="center"
+                            android:textColor="@color/pricetext" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="Đã bán :..."
-                            android:fontFamily="@font/montserrat_medium">
-
-                        </TextView>
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Đã bán: 5103"
+                            android:textAlignment="center" />
                     </LinearLayout>
-
                     <LinearLayout
+                        android:id="@+id/hot_item1"
                         android:layout_width="110dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bolder_image_style"
-                        android:clickable="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/home_rounded_bg_img"
                         android:elevation="4dp"
-                        android:focusable="true"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -233,42 +264,44 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Tên sách"
-                            android:textAlignment="center">
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="A Little Life"
+                            android:maxLines="1"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
 
-                        </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="251.790 đ"
+                            android:textAlignment="center"
+                            android:textColor="@color/pricetext" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Giá bán"
-                            android:textAlignment="center">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Đã bán :..."
-                            android:textAlignment="center">
-
-                        </TextView>
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Đã bán: 4543"
+                            android:textAlignment="center" />
                     </LinearLayout>
-
                     <LinearLayout
+                        android:id="@+id/hot_item2"
                         android:layout_width="110dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bolder_image_style"
-                        android:clickable="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/home_rounded_bg_img"
                         android:elevation="4dp"
-                        android:focusable="true"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -283,329 +316,334 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Tên sách"
-                            android:textAlignment="center">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Giá bán"
-                            android:textAlignment="center">
-
-                        </TextView>
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Búp sen xanh"
+                            android:maxLines="1"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Đã bán :..."
-                            android:textAlignment="center">
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="76.000 đ"
+                            android:textAlignment="center"
+                            android:textColor="@color/pricetext" />
 
-                        </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Đã bán: 3461"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/hot_item3"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/home_rounded_bg_img"
+                        android:elevation="4dp"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="25"
+                            android:src="@drawable/childbook" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Để con được ốm"
+                            android:maxLines="1"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="70.000 đ"
+                            android:textAlignment="center"
+                            android:textColor="@color/pricetext" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Đã bán: 2903"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/hot_item4"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/home_rounded_bg_img"
+                        android:elevation="4dp"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="25"
+                            android:src="@drawable/childbook" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Hiểu về trái tim"
+                            android:maxLines="1"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="131.400 đ"
+                            android:textAlignment="center"
+                            android:textColor="@color/pricetext" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Đã bán: 1118"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/hot_item5"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/home_rounded_bg_img"
+                        android:elevation="4dp"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="25"
+                            android:src="@drawable/childbook" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Nhà đầu tư thông minh"
+                            android:maxLines="1"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="153.800 đ"
+                            android:textAlignment="center"
+                            android:textColor="@color/pricetext" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Đã bán: 983"
+                            android:textAlignment="center" />
                     </LinearLayout>
 
-                    <LinearLayout
-                    android:elevation="4dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/bolder_image_style"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_weight="25"
-                        android:src="@drawable/childbook" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:text="Tên sách"
-                        android:fontFamily="@font/montserrat_medium">
-
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:text="Giá bán"
-                        android:textAlignment="center">
-
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:text="Đã bán :..."
-                        android:fontFamily="@font/montserrat_medium">
-
-                    </TextView>
                 </LinearLayout>
-                    <LinearLayout
-                        android:elevation="4dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:layout_width="110dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bolder_image_style"
-                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_weight="25"
-                            android:src="@drawable/childbook" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:layout_weight="1"
-                            android:text="Tên sách"
-                            android:fontFamily="@font/montserrat_medium">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Giá bán"
-                            android:textAlignment="center">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:layout_weight="1"
-                            android:text="Đã bán :..."
-                            android:fontFamily="@font/montserrat_medium">
-
-                        </TextView>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:elevation="4dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:layout_width="110dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bolder_image_style"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_weight="25"
-                            android:src="@drawable/childbook" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:layout_weight="1"
-                            android:text="Tên sách"
-                            android:fontFamily="@font/montserrat_medium">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Giá bán"
-                            android:textAlignment="center">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:layout_weight="1"
-                            android:text="Đã bán :..."
-                            android:fontFamily="@font/montserrat_medium">
-
-                        </TextView>
-                    </LinearLayout>
-                </LinearLayout>
             </HorizontalScrollView>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
-                    android:text="Công cụ"
                     android:fontFamily="@font/montserrat_bold"
+                    android:paddingVertical="10dp"
+                    android:text="Công cụ"
                     android:textColor="@color/black"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="20dp"
-                    android:weightSum="2"
                     android:orientation="horizontal">
+
                     <LinearLayout
+                        android:id="@+id/orderGroup"
                         android:layout_width="0dp"
-                        android:layout_height="170dp"
-                        android:layout_marginRight="20dp"
-                        android:paddingTop="20dp"
+                        android:layout_height="200dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginRight="20dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bgcongcu"
-                        android:orientation="vertical">
-                        <FrameLayout
+                        android:background="@drawable/btn_bg"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingTop="20dp">
+
+                        <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/bgiconcongcu">
-                            <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/icons8_microsoft_store_64"/>
-                        </FrameLayout>
+                            android:src="@drawable/icon_store" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
                             android:paddingTop="10dp"
                             android:text="Đơn hàng"
                             android:textAlignment="center"
-                            android:fontFamily="@font/montserrat_bold"
                             android:textColor="@color/colornoti"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/productGroup"
                         android:layout_width="0dp"
-                        android:layout_height="170dp"
-                        android:layout_marginLeft="20dp"
-                        android:paddingTop="20dp"
+                        android:layout_height="200dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginRight="20dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bgcongcu"
-                        android:orientation="vertical">
-                        <FrameLayout
+                        android:background="@drawable/btn_bg"
+                        android:orientation="vertical"
+                        android:paddingTop="20dp"
+                        android:gravity="center">
+
+                        <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/bgiconcongcu">
-                            <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/icons8_more_details_64"/>
-                        </FrameLayout>
+                            android:src="@drawable/icon_itemgroup" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
                             android:paddingTop="10dp"
                             android:text="Sản phẩm"
                             android:textAlignment="center"
-                            android:fontFamily="@font/montserrat_bold"
                             android:textColor="@color/colornoti"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="20dp"
-                    android:weightSum="2"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
                     <LinearLayout
+                        android:id="@+id/revenueGroup"
                         android:layout_width="0dp"
-                        android:layout_height="170dp"
-                        android:layout_marginRight="20dp"
-                        android:paddingTop="20dp"
+                        android:layout_height="200dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginRight="20dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bgcongcu"
-                        android:orientation="vertical">
-                        <FrameLayout
+                        android:background="@drawable/btn_bg"
+                        android:orientation="vertical"
+                        android:paddingTop="20dp"
+                        android:gravity="center">
+
+                        <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/bgiconcongcu">
-                            <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/icons8_investment_64"/>
-                        </FrameLayout>
+                            android:src="@drawable/icon_pays" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
                             android:paddingTop="10dp"
                             android:text="Doanh thu"
                             android:textAlignment="center"
-                            android:fontFamily="@font/montserrat_bold"
                             android:textColor="@color/colornoti"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/customerGroup"
                         android:layout_width="0dp"
-                        android:layout_height="170dp"
-                        android:layout_marginLeft="20dp"
-                        android:paddingTop="20dp"
+                        android:layout_height="200dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginRight="20dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bgcongcu"
-                        android:orientation="vertical">
-                        <FrameLayout
+                        android:background="@drawable/btn_bg"
+                        android:orientation="vertical"
+                        android:paddingTop="20dp"
+                        android:gravity="center">
+
+                        <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/bgiconcongcu">
-                            <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/icons8_people_64"/>
-                        </FrameLayout>
+                            android:src="@drawable/icon_people" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
                             android:paddingTop="10dp"
                             android:text="Khách hàng"
                             android:textAlignment="center"
-                            android:fontFamily="@font/montserrat_bold"
                             android:textColor="@color/colornoti"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

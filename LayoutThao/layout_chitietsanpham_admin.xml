@@ -21,10 +21,11 @@
             android:textColor="@color/white">
         </TextView>
         <ImageView
+            android:id="@+id/icon_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="10dp"
-            android:src="@drawable/backspace"></ImageView>
+            android:src="@drawable/backspace"/>
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -87,7 +88,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat_medium"
-                            android:text="DNT Group"
+                            android:text="Tommy-Lee Diaz"
                             android:textColor="@color/ctsach"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -167,7 +168,9 @@
                         android:layout_gravity="center"
                         android:numStars="5"
                         android:rating="3.5"
-                        android:stepSize="0.5"/>
+                        android:stepSize="0.5"
+                        android:progressTint="@color/star"
+                        android:isIndicator="true"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -204,6 +207,7 @@
         </LinearLayout>
     </ScrollView>
     <Button
+        android:id="@+id/updateProduct"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.1"

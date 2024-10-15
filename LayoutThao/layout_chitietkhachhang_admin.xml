@@ -21,10 +21,11 @@
             android:textColor="@color/white">
         </TextView>
         <ImageView
+            android:id="@+id/icon_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="10dp"
-            android:src="@drawable/backspace"></ImageView>
+            android:paddingStart="10dp"
+            android:src="@drawable/backspace"/>
     </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,7 +102,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="DTNGroup@gmail.com"
+                            android:text="Tommy-Lee Diaz"
                             android:gravity="right"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"
@@ -173,7 +174,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="DTNGroup@gmail.com"
+                        android:text="TommyLee@gmail.com"
                         android:gravity="right"
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="18sp"
@@ -245,7 +246,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="DTNGroup@gmail.com"
+                            android:text="TommyLee@gmail.com"
                             android:gravity="right"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"
@@ -275,19 +276,24 @@
                             android:textSize="18sp"
                             android:textColor="@color/colortext"/>
                     </LinearLayout>
-                    <TextView
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+                    <View
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Thay đổi thông tin"
-                        android:gravity="right"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textSize="18sp"
-                        android:textColor="@color/search"/>
+                        android:layout_height="2dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:background="#D9D9D9" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="match_parent"
@@ -300,17 +306,15 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginVertical="20dp"
                         android:weightSum="2"
                         android:orientation="horizontal">
                         <LinearLayout
+                            android:id="@+id/lockAccount"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="200dp"
                             android:layout_weight="1"
-                            android:paddingTop="30dp"
-                            android:paddingBottom="30dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="10dp"
                             android:gravity="center_vertical"
                             android:background="@drawable/bgctkh"
                             android:orientation="vertical">
@@ -322,24 +326,24 @@
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
                                     android:scaleType="fitCenter"
-                                    android:src="@drawable/icons8_lock_50"/>
+                                    android:src="@drawable/icon_lock"/>
                             </FrameLayout>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Khóa tài khoản"
+                                android:padding="10dp"
                                 android:textColor="@color/white"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:textSize="20sp"/>
                         </LinearLayout>
                         <LinearLayout
+                            android:id="@+id/customerOrderList"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="200dp"
                             android:layout_weight="1"
-                            android:paddingTop="30dp"
-                            android:paddingBottom="30dp"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:gravity="center_vertical"
                             android:background="@drawable/bgctkh"
                             android:orientation="vertical">
@@ -351,13 +355,14 @@
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
                                     android:scaleType="fitCenter"
-                                    android:src="@drawable/icons8_order_list_64"/>
+                                    android:src="@drawable/icon_orderlist"/>
                             </FrameLayout>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Đơn hàng"
+                                android:padding="10dp"
                                 android:textColor="@color/white"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:textSize="20sp"/>
