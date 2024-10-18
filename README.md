@@ -1,1 +1,1 @@
-FigmaLink: https://www.figma.com/design/ifCiojfyAqLBcr5tJbJfg0/LTDT?node-id=0-1&t=8kDkex63je7Cv8Ta-1
+FigmaLink: https://www.figma.com/design/fJJjazWpe2F30UsUaioKfZ/LTDT?node-id=1-2&t=3pGa0b6CEaocaDCv-1
