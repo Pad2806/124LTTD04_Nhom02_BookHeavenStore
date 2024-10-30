@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="249dp"
+        android:layout_height="276dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo1_rounded"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="250dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lobster_regular"
+        android:text="Heaven"
+        android:textAlignment="center"
+        android:textColor="#00c1bb"
+        android:textSize="80sp"
+        android:layout_marginTop="490dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Book Store"
+        android:textColor="#00c1bb"
+        android:textSize="25sp"
+        android:layout_marginTop="570dp"
+        android:layout_gravity="center_horizontal"/>
+</FrameLayout>

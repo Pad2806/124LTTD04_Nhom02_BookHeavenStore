@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#0647EF</color>
+    <color name="bgtext">#D0DAEF</color>
+    <color name="bgbtn">#DFDAF4</color>
+    <color name="colortext">#604CC3</color>
+    <color name="bgbook">#C9C2EC</color>
+    <color name="colornoti">#CD31F2</color>
+    <color name="search">#AAA6A6</color>
+    <color name="blurtext">#9EA7AF</color>
+    <color name="pricetext">#FF6230</color>
+    <color name="ctsach">#F27F0C</color>
+    <color name="gia">#FF6230</color>
+    <color name="star">#FFC633</color>
+    <color name="pay">#ECECEC</color>
+    <color name="gray">#858383</color>
+    <color name="light_gray">#D0D0D0</color>
+
+</resources>

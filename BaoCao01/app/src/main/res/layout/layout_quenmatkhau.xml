@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="246dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="249dp"
+            android:layout_height="175dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.393"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.255"
+            app:srcCompat="@drawable/register" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="127dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:lineSpacingExtra="8dp"
+            android:text="Hãy trở thành\nbạn đồng hành \nlâu dài với"
+            android:textColor="@color/design_default_color_primary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.125"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.776" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="20dp"
+            android:text="Book &#xA;         Heaven"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_bold"/>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Quên mật khẩu"
+            android:textAlignment="center"
+            android:layout_marginVertical="10dp"
+            android:textSize="44sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginVertical="5dp"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <EditText
+            android:layout_width="368dp"
+            android:layout_height="55dp"
+            android:hint="abc@gmail.com"
+            android:background="@drawable/background"
+            android:paddingLeft="25dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/montserrat_medium"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:text="Số điện thoại"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_bold"/>
+        <EditText
+            android:layout_width="368dp"
+            android:layout_height="55dp"
+            android:hint="0987654321"
+            android:background="@drawable/background"
+            android:paddingLeft="25dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="number"
+            android:fontFamily="@font/montserrat_medium"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mật khẩu mới"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginVertical="5dp"
+            android:fontFamily="@font/montserrat_bold"/>
+
+        <EditText
+            android:layout_width="368dp"
+            android:layout_height="55dp"
+            android:hint="**********"
+            android:background="@drawable/background"
+            android:paddingLeft="25dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_medium"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:text="Xác nhận mật khẩu"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_bold"/>
+        <EditText
+            android:layout_width="368dp"
+            android:layout_height="55dp"
+            android:hint="**********"
+            android:background="@drawable/background"
+            android:paddingLeft="25dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <Button
+            android:id="@+id/updatePassBtn"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:backgroundTint="@color/bgbtn"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Cập nhật"
+            android:textColor="@color/colortext"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginVertical="5dp"
+                android:background="#D9D9D9" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Đã có tài khoản?"
+                android:textColor="@color/colortext"
+                android:textSize="18sp"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="5dp"
+                android:text="Đăng nhập"
+                android:textColor="@color/colortext"
+                android:textSize="18sp"
+                android:fontFamily="@font/montserrat_bold"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
