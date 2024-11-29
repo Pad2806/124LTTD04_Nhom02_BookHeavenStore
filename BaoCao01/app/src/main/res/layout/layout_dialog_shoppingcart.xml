@@ -51,9 +51,10 @@
                     android:padding="20dp"/>
                 <TextView
                     android:id="@+id/numOrder"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="1"
+                    android:textAlignment="center"
                     android:fontFamily="@font/montserrat_bold"
                     android:textSize="30sp"
                     android:textColor="@color/black"
@@ -69,32 +70,6 @@
                     android:padding="20dp"/>
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_margin="10dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Thành tiền"
-                android:textColor="@color/black"
-                android:fontFamily="@font/montserrat_bold"
-                android:layout_weight="1"/>
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:text="100000 đ"
-                android:textColor="@color/gia"
-                android:fontFamily="@font/montserrat_bold"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
         </LinearLayout>
         <TextView
             android:id="@+id/btn_add"

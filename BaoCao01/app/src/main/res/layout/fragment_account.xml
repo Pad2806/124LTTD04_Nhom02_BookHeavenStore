@@ -26,13 +26,9 @@
         android:layout_height="0dp"
         android:layout_weight="13.9"
         android:orientation="vertical">
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="match_parent"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:paddingTop= "10dp"
@@ -40,22 +36,25 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:orientation="vertical">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/anhKH"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ava4"
                             app:shapeAppearanceOverlay="@style/AvatarStyle" />
                         <TextView
+                            android:id="@+id/tenKH"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="DNTGroup"
+                            android:maxLines="1"
+                            android:ellipsize="end"
                             android:fontFamily="@font/montserrat_bold"
                             android:textSize="32sp"
                             android:textColor="@color/black"
@@ -71,54 +70,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="10dp"
-                        android:weightSum="2"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Mã người dùng"
-                            android:fontFamily="@font/montserrat_bold"
-                            android:textSize="18sp"
-                            android:textColor="@color/black"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="123456789"
-                            android:gravity="right"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:textSize="18sp"
-                            android:textColor="@color/colortext"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="10dp"
-                        android:weightSum="2"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Tên người dùng"
-                            android:fontFamily="@font/montserrat_bold"
-                            android:textSize="18sp"
-                            android:textColor="@color/black"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="DTNGroup@gmail.com"
-                            android:gravity="right"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:textSize="18sp"
-                            android:textColor="@color/colortext"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
                         android:weightSum="2"
                         android:orientation="horizontal">
                         <TextView
@@ -129,15 +81,18 @@
                             android:fontFamily="@font/montserrat_bold"
                             android:textSize="18sp"
                             android:textColor="@color/black"/>
+
                         <TextView
+                            android:id="@+id/diachi"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="123 Abc, Thanh Bình, Hải Châu, Đà Nẵng"
-                            android:gravity="right"
+                            android:ellipsize="end"
                             android:fontFamily="@font/montserrat_medium"
-                            android:textSize="18sp"
-                            android:textColor="@color/colortext"/>
+                            android:gravity="right"
+                            android:maxLines="1"
+                            android:textColor="@color/colortext"
+                            android:textSize="18sp" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -154,11 +109,13 @@
                             android:textSize="18sp"
                             android:textColor="@color/black"/>
                         <TextView
+                            android:id="@+id/sdt"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="0987654321"
                             android:gravity="right"
+                            android:maxLines="1"
+                            android:ellipsize="end"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"
                             android:textColor="@color/colortext"/>
@@ -174,15 +131,19 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="Email"
+                            android:maxLines="1"
+                            android:ellipsize="end"
                             android:fontFamily="@font/montserrat_bold"
                             android:textSize="18sp"
                             android:textColor="@color/black"/>
                         <TextView
+                            android:id="@+id/email"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="DTNGroup@gmail.com"
                             android:gravity="right"
+                            android:maxLines="1"
+                            android:ellipsize="end"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"
                             android:textColor="@color/colortext"/>
@@ -202,11 +163,14 @@
                             android:textSize="18sp"
                             android:textColor="@color/black"/>
                         <TextView
+                            android:id="@+id/ngaysinh"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="10/10/2000"
                             android:gravity="right"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="08-08-2003"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"
                             android:textColor="@color/colortext"/>
@@ -226,10 +190,39 @@
                             android:textSize="18sp"
                             android:textColor="@color/black"/>
                         <TextView
+                            android:id="@+id/ngaydk"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="10/10/2020"
+                            android:gravity="right"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="08-08-2003"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textSize="18sp"
+                            android:textColor="@color/colortext"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Hạng thành viên"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:id="@+id/hang"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:maxLines="1"
+                            android:ellipsize="end"
                             android:gravity="right"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"
@@ -245,39 +238,17 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="Tài khoản"
+                            android:text="Điểm tích lũy"
                             android:fontFamily="@font/montserrat_bold"
                             android:textSize="18sp"
                             android:textColor="@color/black"/>
                         <TextView
+                            android:id="@+id/diem"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="DTNGroup@gmail.com"
-                            android:gravity="right"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:textSize="18sp"
-                            android:textColor="@color/colortext"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="10dp"
-                        android:weightSum="2"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Mật khẩu"
-                            android:fontFamily="@font/montserrat_bold"
-                            android:textSize="18sp"
-                            android:textColor="@color/black"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Abc123!@#"
+                            android:maxLines="1"
+                            android:ellipsize="end"
                             android:gravity="right"
                             android:fontFamily="@font/montserrat_medium"
                             android:textSize="18sp"
@@ -286,8 +257,8 @@
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
                     android:layout_marginBottom="20dp"
                     android:orientation="vertical">
                     <TextView
@@ -398,6 +369,5 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
     </LinearLayout>
 </LinearLayout>

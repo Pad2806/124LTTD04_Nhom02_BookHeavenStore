@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="110dp"
+    android:layout_height="180dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/home_rounded_bg_img"
+    android:clickable="true"
+    android:elevation="4dp"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+    <ImageView
+        android:id="@+id/anhNB"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:src="@drawable/book1" />
+
+    <TextView
+        android:id="@+id/tenNB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat_bold"
+        android:padding="5dp"
+        android:text="A Call To Return"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/giaNB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="100000 đ"
+        android:textAlignment="center"
+        android:textColor="@color/pricetext" />
+
+    <TextView
+        android:id="@+id/soluongNB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Đã bán: 5103"
+        android:textAlignment="center" />
+</LinearLayout>

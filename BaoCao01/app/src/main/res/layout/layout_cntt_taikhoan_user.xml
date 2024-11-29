@@ -17,7 +17,7 @@
             android:text="Thông tin"
             android:fontFamily="@font/montserrat_bold"
             android:textStyle="bold"
-            android:textSize="32sp"
+            android:textSize="30sp"
             android:textAlignment="center"
             android:textColor="@color/white">
         </TextView>
@@ -47,10 +47,10 @@
                 android:paddingTop="15dp"
                 android:orientation="vertical">
                 <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/hinhanhcntt"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ava1"
                     app:shapeAppearanceOverlay="@style/AvatarStyle" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -83,11 +83,11 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:textSize="24sp"/>
                 <EditText
+                    android:id="@+id/tencntt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingVertical="20dp"
                     android:gravity="center_vertical"
-                    android:text="Tommy-Lee Diaz"
                     android:fontFamily="@font/montserrat_regular"
                     android:textSize="20sp"
                     android:paddingStart="20dp"
@@ -108,11 +108,11 @@
                         android:fontFamily="@font/montserrat_bold"
                         android:textSize="24sp"/>
                     <EditText
+                        android:id="@+id/diachicntt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingVertical="20dp"
                         android:gravity="center_vertical"
-                        android:text="123 ABC, Đà Nẵng"
                         android:fontFamily="@font/montserrat_regular"
                         android:textSize="20sp"
                         android:paddingStart="20dp"
@@ -133,11 +133,11 @@
                         android:fontFamily="@font/montserrat_bold"
                         android:textSize="24sp"/>
                     <EditText
+                        android:id="@+id/sdtcntt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingVertical="20dp"
                         android:gravity="center_vertical"
-                        android:text="0987654321"
                         android:fontFamily="@font/montserrat_regular"
                         android:textSize="20sp"
                         android:paddingStart="20dp"
@@ -158,11 +158,36 @@
                         android:fontFamily="@font/montserrat_bold"
                         android:textSize="24sp"/>
                     <EditText
+                        android:id="@+id/emailcntt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingVertical="20dp"
                         android:gravity="center_vertical"
-                        android:text="TommyLee@gmail.com"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:textSize="20sp"
+                        android:paddingStart="20dp"
+                        android:background="@drawable/background"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:gravity="center_vertical"
+                        android:text="Mật khẩu"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="24sp"/>
+                    <EditText
+                        android:id="@+id/matkhaucntt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="20dp"
+                        android:gravity="center_vertical"
                         android:fontFamily="@font/montserrat_regular"
                         android:textSize="20sp"
                         android:paddingStart="20dp"
@@ -183,11 +208,11 @@
                         android:fontFamily="@font/montserrat_bold"
                         android:textSize="24sp"/>
                     <EditText
+                        android:id="@+id/ngaysinhcntt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingVertical="20dp"
                         android:gravity="center_vertical"
-                        android:text="10/10/2000"
                         android:fontFamily="@font/montserrat_regular"
                         android:textSize="20sp"
                         android:paddingStart="20dp"
@@ -195,7 +220,6 @@
                         app:drawableEndCompat="@drawable/icon_celendar"
                         android:paddingEnd="20dp"/>
                 </LinearLayout>
-
             </LinearLayout>
 
         </LinearLayout>

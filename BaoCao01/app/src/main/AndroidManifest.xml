@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +17,7 @@
         android:theme="@style/Theme.BaoCao1"
         tools:targetApi="31">
         <activity
-            android:name=".SlashActivity"
+            android:name=".View.SlashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,57 +25,57 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".View.LoginActivity">
         </activity>
-        <activity android:name=".RatingActivity">
+        <activity android:name=".View.RatingActivity">
         </activity>
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".View.RegisterActivity">
         </activity>
-        <activity android:name=".HomeActivity">
+        <activity android:name=".View.HomeActivity">
         </activity>
-        <activity android:name=".ForgotPassActivity">
+        <activity android:name=".View.ForgotPassActivity">
         </activity>
-        <activity android:name=".NotificationActivity">
+        <activity android:name=".View.NotificationActivity">
         </activity>
-        <activity android:name=".DetailsHotBookActivity">
+        <activity android:name=".View.DetailsHotBookActivity">
         </activity>
-        <activity android:name=".AuthorActivity">
+        <activity android:name=".View.AuthorActivity">
         </activity>
-        <activity android:name=".ShoppingCartActivity">
+        <activity android:name=".View.ShoppingCartActivity">
         </activity>
-        <activity android:name=".UserAccountActivity">
+        <activity android:name=".View.UserAccountActivity">
         </activity>
-        <activity android:name=".PaymentActivity">
+        <activity android:name=".View.PaymentActivity">
         </activity>
-        <activity android:name=".ClassifyBookActivity">
+        <activity android:name=".View.ClassifyBookActivity">
         </activity>
-        <activity android:name=".AuthorsBookActivity">
+        <activity android:name=".View.AuthorsBookActivity">
         </activity>
-        <activity android:name=".UpdateUserInfoActivity">
+        <activity android:name=".View.UpdateUserInfoActivity">
         </activity>
-        <activity android:name=".OrderHistoryActivity">
+        <activity android:name=".View.OrderHistoryActivity">
         </activity>
-        <activity android:name=".BuyHistoryActivity">
+        <activity android:name=".View.BuyHistoryActivity">
         </activity>
-        <activity android:name=".AdminActivity">
+        <activity android:name=".ViewAdmin.AdminActivity">
         </activity>
-        <activity android:name=".AdminOrderListActivity">
+        <activity android:name=".ViewAdmin.AdminOrderListActivity">
         </activity>
-        <activity android:name=".AdminRevenueListActivity">
+        <activity android:name=".ViewAdmin.AdminRevenueListActivity">
         </activity>
-        <activity android:name=".AdminCustomerListActivity">
+        <activity android:name=".ViewAdmin.AdminCustomerListActivity">
         </activity>
-        <activity android:name=".AdminProductListActivity">
+        <activity android:name=".ViewAdmin.AdminProductListActivity">
         </activity>
-        <activity android:name=".AddProductActivity">
+        <activity android:name=".ViewAdmin.AddProductActivity">
         </activity>
-        <activity android:name=".UpdateInfoProductActivity">
+        <activity android:name=".ViewAdmin.UpdateInfoProductActivity">
         </activity>
-        <activity android:name=".InfoProductsActivity">
+        <activity android:name=".View.InfoProductsActivity">
         </activity>
-        <activity android:name=".AdminDetailsAccountActivity">
+        <activity android:name=".ViewAdmin.AdminDetailsAccountActivity">
         </activity>
-        <activity android:name=".AdminCustomerOrderListActivity">
+        <activity android:name=".ViewAdmin.AdminCustomerOrderListActivity">
         </activity>
     </application>
 
