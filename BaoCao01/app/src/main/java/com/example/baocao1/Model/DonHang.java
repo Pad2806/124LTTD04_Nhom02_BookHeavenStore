@@ -1,9 +1,9 @@
 package com.example.baocao1.Model;
 
 public class DonHang {
-    private String MaDonHang,MaSach,HinhAnh,TenSach,SoLuong,ThanhTien,DonGiaBan,MaDanhGia,DanhGia,NoiDung;
+    private String MaDonHang,MaSach,HinhAnh,TenSach,SoLuong,ThanhTien,DonGiaBan,MaDanhGia,DanhGia,NoiDung,NgayDatHang,GioDatHang;
 
-    public DonHang(String maDonHang, String maSach, String hinhAnh, String tenSach, String soLuong, String thanhTien, String donGiaBan, String maDanhGia, String danhGia, String noiDung) {
+    public DonHang(String maDonHang, String maSach, String hinhAnh, String tenSach, String soLuong, String thanhTien, String donGiaBan, String maDanhGia, String danhGia, String noiDung, String ngayDatHang, String gioDatHang) {
         MaDonHang = maDonHang;
         MaSach = maSach;
         HinhAnh = hinhAnh;
@@ -14,6 +14,24 @@ public class DonHang {
         MaDanhGia = maDanhGia;
         DanhGia = danhGia;
         NoiDung = noiDung;
+        NgayDatHang = ngayDatHang;
+        GioDatHang = gioDatHang;
+    }
+
+    public String getNgayDatHang() {
+        return NgayDatHang;
+    }
+
+    public void setNgayDatHang(String ngayDatHang) {
+        NgayDatHang = ngayDatHang;
+    }
+
+    public String getGioDatHang() {
+        return GioDatHang;
+    }
+
+    public void setGioDatHang(String gioDatHang) {
+        GioDatHang = gioDatHang;
     }
 
     public String getMaDonHang() {

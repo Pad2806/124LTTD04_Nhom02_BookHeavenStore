@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:weightSum="15">
+    android:weightSum="15"
+    android:id="@+id/fragment_account">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -258,7 +259,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:orientation="vertical">
                     <TextView
@@ -286,7 +287,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="40dp"
-                                android:text="Lịch sử đặt hàng"
+                                android:text="Lịch sử đơn hàng"
                                 android:textSize="24sp"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:textColor="@color/white"/>
@@ -298,7 +299,7 @@
                                 android:src="@drawable/iconshoppingcart"/>
                         </FrameLayout>
                         <FrameLayout
-                            android:id="@+id/buyHistory"
+                            android:id="@+id/groupInfo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
@@ -309,7 +310,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="40dp"
-                                android:text="Lịch sử mua hàng"
+                                android:text="Thông tin nhóm"
                                 android:textSize="24sp"
                                 android:fontFamily="@font/montserrat_bold"
                                 android:textColor="@color/white"/>
@@ -318,7 +319,7 @@
                                 android:layout_height="35dp"
                                 android:layout_gravity="end"
                                 android:layout_marginEnd="25dp"
-                                android:src="@drawable/icon_ordersuccessed"/>
+                                android:src="@drawable/icon_groupuser"/>
                         </FrameLayout>
                         <FrameLayout
                             android:layout_width="match_parent"

@@ -15,6 +15,9 @@ import com.example.baocao1.R;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -52,6 +55,26 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
         holder.tensach.setText(donhang.getTenSach());
         holder.dongia.setText(formatCurrency(Long.parseLong(donhang.getDonGiaBan())));
         holder.soluong.setText("Số lượng: "+donhang.getSoLuong());
+        holder.giodat.setText(donhang.getGioDatHang());
+        holder.ngaydat.setText(convertDateFormat(donhang.getNgayDatHang()));
+    }
+    private String convertDateFormat(String dateStr) {
+        if (dateStr == null || dateStr.isEmpty()) {
+            return "01-01-2000";
+        }
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            Date date = inputFormat.parse(dateStr);
+            if (date != null) {
+                SimpleDateFormat outputFormat = new SimpleDateFormat(" dd-MM-yyyy", Locale.getDefault());
+                return outputFormat.format(date);
+            } else {
+                return "01-01-2001";
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return "01-01-2002";
+        }
     }
 
     public static String formatCurrency(long number) {
@@ -70,7 +93,7 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
     }
 
     public static class DonDatViewHolder extends RecyclerView.ViewHolder {
-        TextView tensach, dongia, soluong;
+        TextView tensach, dongia, soluong,giodat,ngaydat;
         ImageView hinhanh;
 
         public DonDatViewHolder(View itemView) {
@@ -79,6 +102,8 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
             dongia = itemView.findViewById(R.id.dongiaDM);
             soluong = itemView.findViewById(R.id.soluongDM);
             hinhanh = itemView.findViewById(R.id.hinhanhDM);
+            giodat = itemView.findViewById(R.id.giodat);
+            ngaydat = itemView.findViewById(R.id.ngaydat);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

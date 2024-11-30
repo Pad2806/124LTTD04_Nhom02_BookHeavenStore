@@ -35,7 +35,7 @@ public class AccountFragment extends Fragment {
     private TextView updateInfo, btnCancel, btnAgree;
     private TextView tenKH, diachi, hang, sdt, email, ngaysinh, ngaydk,diem;
     private ImageView anhKH;
-    private FrameLayout orderHistory, buyHistory, logoutBtn;
+    private FrameLayout orderHistory, groupInfo, logoutBtn;
     Dialog dialog;
     View view;
     public static String TenKhachHang="";
@@ -60,7 +60,7 @@ public class AccountFragment extends Fragment {
 
         updateInfo = view.findViewById(R.id.updateInfo);
         orderHistory = view.findViewById(R.id.orderHistory);
-        buyHistory = view.findViewById(R.id.buyHistory);
+        groupInfo = view.findViewById(R.id.groupInfo);
         logoutBtn = view.findViewById(R.id.logoutBtn);
 
         dialog = new Dialog(requireContext());
@@ -82,14 +82,14 @@ public class AccountFragment extends Fragment {
         orderHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), OrderHistoryActivity.class));
+                startActivity(new Intent(getActivity(), OrderBuyUserActivity.class));
             }
         });
 
-        buyHistory.setOnClickListener(new View.OnClickListener() {
+        groupInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), BuyHistoryActivity.class));
+                startActivity(new Intent(getActivity(), GroupInfo.class));
             }
         });
 

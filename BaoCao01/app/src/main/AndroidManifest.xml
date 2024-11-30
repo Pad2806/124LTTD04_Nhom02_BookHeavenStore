@@ -43,7 +43,9 @@
         </activity>
         <activity android:name=".View.ShoppingCartActivity">
         </activity>
-        <activity android:name=".View.UserAccountActivity">
+        <activity android:name=".View.OrderBuyUserActivity">
+        </activity>
+        <activity android:name=".View.GroupInfo">
         </activity>
         <activity android:name=".View.PaymentActivity">
         </activity>

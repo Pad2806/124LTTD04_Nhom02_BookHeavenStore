@@ -129,7 +129,8 @@ public class PaymentActivity extends AppCompatActivity implements SachMuaAdapter
         btnAgree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+//                finish();
+                startActivity(new Intent(PaymentActivity.this,OrderBuyUserActivity.class));
             }
         });
         String source = getIntent().getStringExtra("From");
