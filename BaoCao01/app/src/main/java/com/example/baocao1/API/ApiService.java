@@ -113,8 +113,23 @@ public interface ApiService {
 //                                @Query("TongTien") String TongTien);
     @POST("muaSach.php")
     Call<APICapNhat> muaSach(@Body MuaSach sachmua);
+
     @GET("xoaSach_GioHang.php")
     Call<APICapNhat> xoaSach_GioHang(@Query("DSSachMua") String list);
+
     @GET("themSach_GioHang.php")
     Call<APICapNhat> themSach_GioHang(@Query("MaGioHang") String MaGioHang,@Query("MaSach") String MaSach,@Query("SoLuong") String SoLuong,@Query("DonGia") String DonGia);
+
+    @GET("checkDangKi.php")
+    Call<APICapNhat> checkDangKi(@Query("Email") String Email,@Query("SDT") String SDT);
+
+    @GET("themKhachHang.php")
+    Call<APICapNhat> themKhachHang(@Query("Email") String Email,@Query("SDT") String SDT,@Query("MatKhau") String MatKhau);
+
+    @GET("checkTaiKhoan.php")
+    Call<APICapNhat> checkTaiKhoan(@Query("Email") String Email,@Query("SDT") String SDT);
+
+    @GET("updateTaiKhoan.php")
+    Call<APICapNhat> updateTaiKhoan(@Query("Email") String Email,@Query("SDT") String SDT,@Query("MatKhau") String MatKhau);
+
 }

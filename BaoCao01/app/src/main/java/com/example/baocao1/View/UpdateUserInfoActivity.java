@@ -119,19 +119,61 @@ public class UpdateUserInfoActivity extends AppCompatActivity {
             public void onResponse(Call<KhachHang> call, Response<KhachHang> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     KhachHang khachHang = response.body();
-                    // Hiển thị thông tin khách hàng nhận được từ API
-                    String imageUrl = khachHang.getHinhAnh().replace("https://drive.google.com/file/d/", "https://drive.google.com/uc?export=view&id=");
+                    // Kiểm tra các giá trị và thay thế nếu null hoặc rỗng
+                    String imageUrl = (khachHang.getHinhAnh() != null && !khachHang.getHinhAnh().isEmpty())
+                            ? khachHang.getHinhAnh().replace("https://drive.google.com/file/d/", "https://drive.google.com/uc?export=view&id=")
+                            : "https://drive.google.com/uc?export=view&id=1mN364fPukZjPWz2QwbyaZIavt2voafxj";
+
+                    String tenKhachHang = (khachHang.getTenKhachHang() != null && !khachHang.getTenKhachHang().isEmpty())
+                            ? khachHang.getTenKhachHang()
+                            : "";
+
+                    String diaChi = (khachHang.getDiaChi() != null && !khachHang.getDiaChi().isEmpty())
+                            ? khachHang.getDiaChi()
+                            : "";
+
+                    String matkhauu = (khachHang.getMatKhau() != null && !khachHang.getMatKhau().isEmpty())
+                            ? khachHang.getMatKhau()
+                            : "";
+
+                    String diemTichLuy = (khachHang.getDiem() != null)
+                            ? khachHang.getDiem() + " điểm"
+                            : "0 điểm";
+
+                    String sdtt = (khachHang.getSDT() != null && !khachHang.getSDT().isEmpty())
+                            ? khachHang.getSDT()
+                            : "";
+
+                    String emaill = (khachHang.getEmail() != null && !khachHang.getEmail().isEmpty())
+                            ? khachHang.getEmail()
+                            : "";
+
+                    String ngaySinh = (khachHang.getNgaySinh() != null && !khachHang.getNgaySinh().isEmpty())
+                            ? convertDateFormat(khachHang.getNgaySinh())
+                            : "";
+
+                    // Hiển thị thông tin khách hàng
                     Glide.with(getApplicationContext())
                             .load(imageUrl)
                             .into(hinhanh);
-                    ten.setText(khachHang.getTenKhachHang());
-                    diachi.setText(khachHang.getDiaChi());
-                    matkhau.setText(khachHang.getMatKhau());
-                    sdt.setText(khachHang.getSDT());
-                    email.setText(khachHang.getEmail());
-                    ngaysinh.setText(convertDateFormat(khachHang.getNgaySinh()));
-//                    MaGioHang=khachHang.getMaGioHang();
-//                    Toast.makeText(getActivity().getApplicationContext(), MaGioHang, Toast.LENGTH_SHORT).show();
+                    ten.setText(tenKhachHang);
+                    diachi.setText(diaChi);
+                    matkhau.setText(matkhauu);
+                    sdt.setText(sdtt);
+                    email.setText(emaill);
+                    ngaysinh.setText(ngaySinh);
+//                    // Hiển thị thông tin khách hàng nhận được từ API
+//                    String imageUrl = khachHang.getHinhAnh().replace("https://drive.google.com/file/d/", "https://drive.google.com/uc?export=view&id=");
+//                    Glide.with(getApplicationContext())
+//                            .load(imageUrl)
+//                            .into(hinhanh);
+//                    ten.setText(khachHang.getTenKhachHang());
+//                    diachi.setText(khachHang.getDiaChi());
+//                    matkhau.setText(khachHang.getMatKhau());
+//                    sdt.setText(khachHang.getSDT());
+//                    email.setText(khachHang.getEmail());
+//                    ngaysinh.setText(convertDateFormat(khachHang.getNgaySinh()));
+////                    Toast.makeText(getActivity().getApplicationContext(), MaGioHang, Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "Không tìm thấy thông tin khách hàng", Toast.LENGTH_SHORT).show();
                 }

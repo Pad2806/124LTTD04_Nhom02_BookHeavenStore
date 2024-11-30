@@ -84,6 +84,7 @@
             android:fontFamily="@font/montserrat_medium"/>
 
         <EditText
+            android:id="@+id/emailqmk"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="abc@gmail.com"
@@ -100,6 +101,7 @@
             android:textSize="20sp"
             android:fontFamily="@font/montserrat_medium"/>
         <EditText
+            android:id="@+id/sdtqmk"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="0987654321"
@@ -119,6 +121,7 @@
             android:fontFamily="@font/montserrat_medium"/>
 
         <EditText
+            android:id="@+id/matkhauqmk"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="**********"
@@ -135,6 +138,7 @@
             android:textSize="20sp"
             android:fontFamily="@font/montserrat_medium"/>
         <EditText
+            android:id="@+id/xacnhanmatkhauqmk"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="**********"

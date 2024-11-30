@@ -131,21 +131,71 @@ public class AccountFragment extends Fragment {
             public void onResponse(Call<KhachHang> call, Response<KhachHang> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     KhachHang khachHang = response.body();
-                    // Hiển thị thông tin khách hàng nhận được từ API
-                    String imageUrl = khachHang.getHinhAnh().replace("https://drive.google.com/file/d/", "https://drive.google.com/uc?export=view&id=");
+//                    // Hiển thị thông tin khách hàng nhận được từ API
+//                    String imageUrl = khachHang.getHinhAnh().replace("https://drive.google.com/file/d/", "https://drive.google.com/uc?export=view&id=");
+//                    Glide.with(getContext())
+//                            .load(imageUrl)
+//                            .into(anhKH);
+//                    TenKhachHang=khachHang.getTenKhachHang();
+//                    tenKH.setText(khachHang.getTenKhachHang());
+//                    DiaChi=khachHang.getDiaChi();
+//                    diachi.setText(khachHang.getDiaChi());
+//                    hang.setText(khachHang.getHangThanhVien());
+//                    diem.setText(khachHang.getDiem()+" điểm");
+//                    sdt.setText(khachHang.getSDT());
+//                    email.setText(khachHang.getEmail());
+//                    ngaysinh.setText(convertDateFormat(khachHang.getNgaySinh()));
+//                    ngaydk.setText(convertDateFormat(khachHang.getNgayDangKy()));
+
+                    // Kiểm tra các giá trị và thay thế nếu null hoặc rỗng
+                    String imageUrl = (khachHang.getHinhAnh() != null && !khachHang.getHinhAnh().isEmpty())
+                            ? khachHang.getHinhAnh().replace("https://drive.google.com/file/d/", "https://drive.google.com/uc?export=view&id=")
+                            : "https://drive.google.com/uc?export=view&id=1mN364fPukZjPWz2QwbyaZIavt2voafxj";
+
+                    String tenKhachHang = (khachHang.getTenKhachHang() != null && !khachHang.getTenKhachHang().isEmpty())
+                            ? khachHang.getTenKhachHang()
+                            : "";
+
+                    String diaChi = (khachHang.getDiaChi() != null && !khachHang.getDiaChi().isEmpty())
+                            ? khachHang.getDiaChi()
+                            : "";
+
+                    String hangThanhVien = (khachHang.getHangThanhVien() != null && !khachHang.getHangThanhVien().isEmpty())
+                            ? khachHang.getHangThanhVien()
+                            : "";
+
+                    String diemTichLuy = (khachHang.getDiem() != null)
+                            ? khachHang.getDiem() + " điểm"
+                            : "0 điểm";
+
+                    String sdtt = (khachHang.getSDT() != null && !khachHang.getSDT().isEmpty())
+                            ? khachHang.getSDT()
+                            : "";
+
+                    String emaill = (khachHang.getEmail() != null && !khachHang.getEmail().isEmpty())
+                            ? khachHang.getEmail()
+                            : "";
+
+                    String ngaySinh = (khachHang.getNgaySinh() != null && !khachHang.getNgaySinh().isEmpty())
+                            ? convertDateFormat(khachHang.getNgaySinh())
+                            : "";
+
+                    String ngayDangKy = (khachHang.getNgayDangKy() != null && !khachHang.getNgayDangKy().isEmpty())
+                            ? convertDateFormat(khachHang.getNgayDangKy())
+                            : "";
+
+                    // Hiển thị thông tin khách hàng
                     Glide.with(getContext())
                             .load(imageUrl)
                             .into(anhKH);
-                    TenKhachHang=khachHang.getTenKhachHang();
-                    tenKH.setText(khachHang.getTenKhachHang());
-                    DiaChi=khachHang.getDiaChi();
-                    diachi.setText(khachHang.getDiaChi());
-                    hang.setText(khachHang.getHangThanhVien());
-                    diem.setText(khachHang.getDiem()+" điểm");
-                    sdt.setText(khachHang.getSDT());
-                    email.setText(khachHang.getEmail());
-                    ngaysinh.setText(convertDateFormat(khachHang.getNgaySinh()));
-                    ngaydk.setText(convertDateFormat(khachHang.getNgayDangKy()));
+                    tenKH.setText(tenKhachHang);
+                    diachi.setText(diaChi);
+                    hang.setText(hangThanhVien);
+                    diem.setText(diemTichLuy);
+                    sdt.setText(sdtt);
+                    email.setText(emaill);
+                    ngaysinh.setText(ngaySinh);
+                    ngaydk.setText(ngayDangKy);
                 } else {
                     Toast.makeText(getActivity().getApplicationContext(), "Không tìm thấy thông tin khách hàng", Toast.LENGTH_SHORT).show();
                 }
