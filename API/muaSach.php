@@ -50,11 +50,21 @@ foreach ($sachMuaList as $sachMua) {
     $MaSach = $sachMua['MaSach'];
     $SoLuong = $sachMua['SoLuong'];
     $DonGia = $sachMua['DonGiaBan'];
+    $sqlmadh = "SELECT taoMaDanhGiamoi() AS ma_danh_gia";
+    $resultdg = $conn->query($sqlmadh);
+
+    if ($resultdg && $result->num_rows > 0) {
+        // Lấy kết quả
+        $row = $resultdg->fetch_assoc();
+        $MaDanhGia =$row['ma_danh_gia'];
+    } else {
+        echo "Không có kết quả hoặc lỗi truy vấn.";
+    }
     // Thêm từng sản phẩm vào bảng ChiTietDonHang
-    $sqlctdh = "INSERT INTO ChiTietDonHang (MaDonHang, MaSach, SoLuong, DonGia) 
-    VALUES (?, ?, ?, ?)";
+    $sqlctdh = "INSERT INTO ChiTietDonHang (MaDonHang, MaSach, SoLuong, DonGia, MaDanhGia) 
+    VALUES (?, ?, ?, ?, ?)";
     $stmtCT = $conn->prepare($sqlctdh);
-    $stmtCT->bind_param("ssdd", $MaDonHang, $MaSach, $SoLuong, $DonGia);
+    $stmtCT->bind_param("ssdds", $MaDonHang, $MaSach, $SoLuong, $DonGia, $MaDanhGia);
 
     $sqlctgh= "DELETE FROM ChiTietGioHang WHERE MaGioHang=? AND MaSach=?";
     $stmtCTGH = $conn->prepare($sqlctgh);
