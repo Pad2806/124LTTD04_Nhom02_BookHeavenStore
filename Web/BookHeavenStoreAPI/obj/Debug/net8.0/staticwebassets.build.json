@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "Sp062Lj9/+/l4Ip83xygPbtZTbeEp1NDIQAt0E/in+w=",
+  "Hash": "ZoFaUmrRl5HmgUCCwYF6H6gbjvsN+yH4ScXVRGqD3b8=",
   "Source": "BookHeavenStoreAPI",
   "BasePath": "_content/BookHeavenStoreAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

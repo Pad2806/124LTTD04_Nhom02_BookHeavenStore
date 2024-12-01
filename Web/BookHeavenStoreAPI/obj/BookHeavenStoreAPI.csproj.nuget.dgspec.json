@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj": {}
+    "C:\\Users\\ADMIN\\AndroidStudioProjects\\BaoCao\\BaoCao\\Web\\BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj": {}
   },
   "projects": {
-    "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj": {
+    "C:\\Users\\ADMIN\\AndroidStudioProjects\\BaoCao\\BaoCao\\Web\\BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\AndroidStudioProjects\\BaoCao\\BaoCao\\Web\\BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj",
         "projectName": "BookHeavenStoreAPI",
-        "projectPath": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj",
-        "packagesPath": "C:\\Users\\PhanAnhDuy\\.nuget\\packages\\",
-        "outputPath": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\obj\\",
+        "projectPath": "C:\\Users\\ADMIN\\AndroidStudioProjects\\BaoCao\\BaoCao\\Web\\BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\AndroidStudioProjects\\BaoCao\\BaoCao\\Web\\BookHeavenStoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PhanAnhDuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +42,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -92,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
