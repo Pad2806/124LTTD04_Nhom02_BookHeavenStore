@@ -56,17 +56,10 @@ public class ForgotPassActivity extends AppCompatActivity {
             }
         });
 
-
         updatePassBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 kiemtrataikhoan(email.getText().toString(),sdt.getText().toString());
-                if (validateInputs(email, sdt, matkhau, xacnhanmatkhau) && test) {
-                    dialog.show();
-                    updateTaiKhoan(email.getText().toString(),sdt.getText().toString(),matkhau.getText().toString());
-                } else {
-                    Toast.makeText(getApplicationContext(), "Kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
-                }
             }
         });
 
@@ -100,9 +93,9 @@ public class ForgotPassActivity extends AppCompatActivity {
             }
         });
     }
-    public void kiemtrataikhoan(String Email, String sdt) {
+    public void kiemtrataikhoan(String Email, String Sdt) {
         ApiService apiService = ApiController.getRetrofitInstance().create(ApiService.class);
-        Call<APICapNhat> call = apiService.checkTaiKhoan(Email, sdt);
+        Call<APICapNhat> call = apiService.checkTaiKhoan(Email, Sdt);
         call.enqueue(new Callback<APICapNhat>() {
             @Override
             public void onResponse(Call<APICapNhat> call, Response<APICapNhat> response) {
@@ -110,21 +103,24 @@ public class ForgotPassActivity extends AppCompatActivity {
                     APICapNhat Response = response.body();
                     String error=Response.getMessage();
                     if(error.equals("FALSE")){
-                        test=false;
+                        Toast.makeText(getApplicationContext(), "Email hoặc Số điện thoại không hợp lệ", Toast.LENGTH_SHORT).show();
                     }
                     if(error.equals("TRUE")){
-                        test=true;
+                        if (validateInputs(email, sdt, matkhau, xacnhanmatkhau)) {
+                            dialog.show();
+                            updateTaiKhoan(email.getText().toString(),sdt.getText().toString(),matkhau.getText().toString());
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Kiểm tra lại thông tin", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    Log.e("ERROR", error+test.toString());
                 } else {
-                    Toast.makeText(getApplicationContext(), "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Đã xảy ra lỗi", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
             public void onFailure(Call<APICapNhat> call, Throwable t) {
                 Log.e("API_ERROR", "Error connecting to server", t);
                 Toast.makeText(getApplicationContext(), "Không thể kết nối đến server", Toast.LENGTH_SHORT).show();
-                test=false;
             }
         });
     }
