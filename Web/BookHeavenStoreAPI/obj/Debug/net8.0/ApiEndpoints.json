@@ -1,0 +1,298 @@
+[
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.KhachHangController",
+    "Method": "GetKhachHangs",
+    "RelativePath": "api/khachhang",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.KhachHangController",
+    "Method": "PostKhachHang",
+    "RelativePath": "api/khachhang",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "khachHang",
+        "Type": "BookHeavenStoreAPI.Models.KhachHang",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.KhachHangController",
+    "Method": "PutKhachHang",
+    "RelativePath": "api/khachhang",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "khachHang",
+        "Type": "BookHeavenStoreAPI.Models.KhachHang",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.KhachHangController",
+    "Method": "GetKhachHangById",
+    "RelativePath": "api/khachhang/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.KhachHangController",
+    "Method": "DeleteKhachHang",
+    "RelativePath": "api/khachhang/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.NXBController",
+    "Method": "GetNXBs",
+    "RelativePath": "api/nxb",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.NXBController",
+    "Method": "PostNXB",
+    "RelativePath": "api/nxb",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nxb",
+        "Type": "BookHeavenStoreAPI.Models.NXB",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.NXBController",
+    "Method": "PutNXB",
+    "RelativePath": "api/nxb",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nxb",
+        "Type": "BookHeavenStoreAPI.Models.NXB",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.NXBController",
+    "Method": "GetNXBById",
+    "RelativePath": "api/nxb/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.NXBController",
+    "Method": "DeleteNXB",
+    "RelativePath": "api/nxb/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.SachController",
+    "Method": "GetSachs",
+    "RelativePath": "api/sach",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.SachController",
+    "Method": "PostSach",
+    "RelativePath": "api/sach",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sach",
+        "Type": "BookHeavenStoreAPI.Models.Sach",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.SachController",
+    "Method": "PutSach",
+    "RelativePath": "api/sach",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sach",
+        "Type": "BookHeavenStoreAPI.Models.Sach",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.SachController",
+    "Method": "GetSachById",
+    "RelativePath": "api/sach/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.SachController",
+    "Method": "DeleteSach",
+    "RelativePath": "api/sach/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.TacGiaController",
+    "Method": "GetTacGias",
+    "RelativePath": "api/tacgia",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.TacGiaController",
+    "Method": "PostTacGia",
+    "RelativePath": "api/tacgia",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tacGia",
+        "Type": "BookHeavenStoreAPI.Models.TacGia",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.TacGiaController",
+    "Method": "PutTacGia",
+    "RelativePath": "api/tacgia",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tacGia",
+        "Type": "BookHeavenStoreAPI.Models.TacGia",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.TacGiaController",
+    "Method": "GetTacGiaById",
+    "RelativePath": "api/tacgia/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookHeavenStoreAPI.Controllers.TacGiaController",
+    "Method": "DeleteTacGia",
+    "RelativePath": "api/tacgia/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

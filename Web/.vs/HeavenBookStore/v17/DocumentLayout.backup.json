@@ -1,0 +1,292 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\controllers\\theloaicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\controllers\\theloaicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\controllers\\nxbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\controllers\\nxbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\controllers\\tacgiacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\controllers\\tacgiacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\controllers\\sachcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\controllers\\sachcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\tacgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\tacgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\controllers\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\controllers\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\sach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\sach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\nxb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\nxb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\theloai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\theloai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\defautconnections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\defautconnections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\chitietgiohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\chitietgiohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|d:\\nam3_hk1\\laptrinhdidong\\bookheavenstore\\code\\heavenbookstore\\bookheavenstoreapi\\models\\pttt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{315C5561-9015-4F9E-B09A-6C533D285054}|BookHeavenStoreAPI\\BookHeavenStoreAPI.csproj|solutionrelative:bookheavenstoreapi\\models\\pttt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TheLoaiController.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\TheLoaiController.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Controllers\\TheLoaiController.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\TheLoaiController.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Controllers\\TheLoaiController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAA1wD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T14:46:21.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NXBController.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\NXBController.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Controllers\\NXBController.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\NXBController.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Controllers\\NXBController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAwDMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T14:02:50.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TacGiaController.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\TacGiaController.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Controllers\\TacGiaController.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\TacGiaController.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Controllers\\TacGiaController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAQwCkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T10:19:29.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SachController.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\SachController.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Controllers\\SachController.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\SachController.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Controllers\\SachController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowEYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T18:22:40.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KhachHangController.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\KhachHangController.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Controllers\\KhachHangController.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Controllers\\KhachHangController.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Controllers\\KhachHangController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwDUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:24:21.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "KhachHang.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\KhachHang.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\KhachHang.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\KhachHang.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\KhachHang.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T14:49:22.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChiTietDonHang.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\ChiTietDonHang.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\ChiTietDonHang.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\ChiTietDonHang.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\ChiTietDonHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:18:45.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ChiTietGioHang.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\ChiTietGioHang.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\ChiTietGioHang.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\ChiTietGioHang.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\ChiTietGioHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:17:30.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DonHang.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\DonHang.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\DonHang.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\DonHang.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\DonHang.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:14:00.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GioHang.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\GioHang.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\GioHang.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\GioHang.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\GioHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:12:32.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PTTT.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\PTTT.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\PTTT.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\PTTT.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\PTTT.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:11:04.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TheLoai.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\TheLoai.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\TheLoai.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\TheLoai.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\TheLoai.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:10:02.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TacGia.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\TacGia.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\TacGia.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\TacGia.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\TacGia.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:07:34.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NXB.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\NXB.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\NXB.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\NXB.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\NXB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:05:20.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Sach.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\Sach.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\Models\\Sach.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\Models\\Sach.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\Models\\Sach.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T13:01:04.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DefautConnections.cs",
+              "DocumentMoniker": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\DefautConnections.cs",
+              "RelativeDocumentMoniker": "BookHeavenStoreAPI\\DefautConnections.cs",
+              "ToolTip": "D:\\Nam3_HK1\\LapTrinhDiDong\\BookHeavenStore\\Code\\HeavenBookStore\\BookHeavenStoreAPI\\DefautConnections.cs",
+              "RelativeToolTip": "BookHeavenStoreAPI\\DefautConnections.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T12:38:39.951Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
