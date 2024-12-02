@@ -5,6 +5,7 @@ import com.example.baocao1.Model.DonHang;
 import com.example.baocao1.Model.KhachHang;
 import com.example.baocao1.Model.ChiTietSach;
 import com.example.baocao1.Model.MuaSach;
+import com.example.baocao1.Model.Sach_DanhGia;
 import com.example.baocao1.Model.Sach_GioHang;
 import com.example.baocao1.Model.TacGia;
 import com.example.baocao1.Model.TheLoai;
@@ -132,4 +133,12 @@ public interface ApiService {
     @GET("updateTaiKhoan.php")
     Call<APICapNhat> updateTaiKhoan(@Query("Email") String Email,@Query("SDT") String SDT,@Query("MatKhau") String MatKhau);
 
+    @GET("getDanhGiaSach.php")
+    Call<Sach_DanhGia> getDanhGiaSach(@Query("MaDanhGia") String MaDanhGia);
+
+    @GET("DanhGia.php")
+    Call<APICapNhat> DanhGia(@Query("MaDanhGia") String MaDanhGia,@Query("DanhGia") String DanhGia,@Query("NoiDung") String NoiDung);
+
+    @GET("huyDonHang.php")
+    Call<APICapNhat> huyDonHang(@Query("MaDonHang") String MaDonHang);
 }

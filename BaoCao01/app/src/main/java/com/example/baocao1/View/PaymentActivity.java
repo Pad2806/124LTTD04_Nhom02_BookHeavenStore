@@ -136,7 +136,7 @@ public class PaymentActivity extends AppCompatActivity implements SachMuaAdapter
         String source = getIntent().getStringExtra("From");
 //        Toast.makeText(getApplicationContext(), source, Toast.LENGTH_SHORT).show();
         if (source != null) {
-            if (source.equals("DetailsHotBookActivity")) {
+            if (source.equals("DetailsHotBookActivity") | source.equals("BoughtHistoryFragment")) {
                 // Xử lý logic khi được gọi từ DetailsHotBookActivity
                 listSachMua_CTS = new ArrayList<>();
                 adapter_CTS = new SachMua_CTSAdapter(listSachMua_CTS,this);

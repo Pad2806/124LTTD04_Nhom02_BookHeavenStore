@@ -3,13 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="180dp"
     android:background="@drawable/bgthongbao"
     android:layout_marginBottom="10dp"
     android:layout_marginTop="5dp"
-    android:orientation="horizontal"
-    android:paddingVertical="10dp"
-    android:weightSum="4">
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:paddingTop="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày nhận hàng:"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/ngaynhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 01-12-2024"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+        android:weightSum="4">
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -120,5 +146,6 @@
                 android:textColor="@color/white"
                 android:textSize="18sp" />
         </LinearLayout>
+    </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -1,9 +1,9 @@
 package com.example.baocao1.Model;
 
 public class ChiTietSach {
-    private String MaSach,TenSach,DonGiaBan,SoLuongBan,SoLuongCon,HinhAnh,MoTa,TenTacGia, SoLuong;
+    private String MaSach,TenSach,DonGiaBan,SoLuongBan,SoLuongCon,HinhAnh,MoTa,TenTacGia, SoLuong,DiemDanhGia;
 
-    public ChiTietSach(String maSach, String tenSach, String donGiaBan, String soLuongBan, String soLuongCon, String hinhAnh, String moTa, String tenTacGia, String soLuong) {
+    public ChiTietSach(String maSach, String tenSach, String donGiaBan, String soLuongBan, String soLuongCon, String hinhAnh, String moTa, String tenTacGia, String soLuong, String danhGia) {
         MaSach = maSach;
         TenSach = tenSach;
         DonGiaBan = donGiaBan;
@@ -13,6 +13,15 @@ public class ChiTietSach {
         MoTa = moTa;
         TenTacGia = tenTacGia;
         SoLuong = soLuong;
+        DiemDanhGia = danhGia;
+    }
+
+    public String getDiemDanhGia() {
+        return DiemDanhGia;
+    }
+
+    public void setDiemDanhGia(String danhGia) {
+        DiemDanhGia = danhGia;
     }
 
     public String getSoLuong() {

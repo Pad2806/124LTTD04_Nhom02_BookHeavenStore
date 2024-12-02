@@ -136,4 +136,19 @@ public class BoughtHistoryFragment extends Fragment implements DonNhanAdapter.On
         intent.putExtra("MaSach", donhang.getMaSach()); // Truyền mã sản phẩm
         startActivity(intent);
     }
+
+    @Override
+    public void onBuyAgainClick(DonHang donhang) {
+        Intent intent = new Intent(getContext(), PaymentActivity.class);
+        intent.putExtra("From", "BoughtHistoryFragment");
+        intent.putExtra("MaSach", donhang.getMaSach()); // Truyền mã sản phẩm
+        startActivity(intent);
+    }
+
+    @Override
+    public void onRateClick(DonHang donhang) {
+        Intent intent = new Intent(getContext(), RatingActivity.class);
+        intent.putExtra("MaDanhGia", donhang.getMaDanhGia()); // Truyền mã sản phẩm
+        startActivity(intent);
+    }
 }

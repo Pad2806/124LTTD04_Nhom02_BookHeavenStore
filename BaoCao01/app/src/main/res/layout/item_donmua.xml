@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="180dp"    android:layout_marginBottom="10dp"
+    android:layout_height="180dp"
+    android:layout_marginBottom="10dp"
     android:layout_marginTop="5dp"
     android:background="@drawable/bgthongbao">
     <LinearLayout
@@ -115,21 +116,36 @@
                     android:id="@+id/btnCancelDM"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="end|center_vertical"
-                    android:layout_weight="1">
-
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:weightSum="2"
+                    android:layoutDirection="rtl">
                     <TextView
+                        android:visibility="gone"
+                        android:id="@+id/btndahuy"
+                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginRight="0dp"
-                        android:layout_weight="1"
-                        android:text="Hủy"
+                        android:text="Đã hủy"
                         android:gravity="center"
                         android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/colortext"
+                        android:background="@drawable/noti_itembg"
+                        android:textSize="18sp"/>
+                    <TextView
+                        android:visibility="visible"
+                        android:id="@+id/btnhuy"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="0dp"
+                        android:text="Hủy"
+                        android:fontFamily="@font/montserrat_bold"
                         android:textColor="@color/white"
-                        android:layout_marginStart="160dp"
                         android:background="@drawable/btn_user_bg"
                         android:textSize="18sp"/>
+
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

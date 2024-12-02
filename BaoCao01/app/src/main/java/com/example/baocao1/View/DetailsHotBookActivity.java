@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,7 @@ import retrofit2.Response;
 
 public class DetailsHotBookActivity extends AppCompatActivity {
     private String maSach;
+    private RatingBar danhgia;
     private ImageView icon_back, icon_cancel,pdfImageView,anhSach;
     private TextView plus, minus, numOrder, btnBuyBook, btnOrderBook, btnadd;
     private TextView tieude,tenSach,giaSach,tacgia,luotban,tinhtrang,mota;
@@ -62,7 +64,7 @@ public class DetailsHotBookActivity extends AppCompatActivity {
         btnBuyBook = findViewById(R.id.btnBuyBook);
         btnOrderBook = findViewById(R.id.btnOrderBook);
         pdfImageView=findViewById(R.id.pdfImageView);
-
+        danhgia=findViewById(R.id.danhgia);
         btnClosePdf=findViewById(R.id.btnClosePdf);
         btnPrevPage=findViewById(R.id.btnPrevPage);
         btnNextPage=findViewById(R.id.btnNextPage);
@@ -256,6 +258,7 @@ public class DetailsHotBookActivity extends AppCompatActivity {
                     giaSach.setText(formatCurrency(Long.parseLong(sach.getDonGiaBan())));
                     tacgia.setText(sach.getTenTacGia());
                     luotban.setText(sach.getSoLuongBan());
+                    danhgia.setRating(Float.parseFloat(sach.getDiemDanhGia()));
                     tinhtrang.setText("Còn("+sach.getSoLuongCon()+")");
                     mota.setText(sach.getMoTa());
                 } else {

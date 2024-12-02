@@ -15,6 +15,9 @@ import com.example.baocao1.R;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -24,6 +27,8 @@ public class DonNhanAdapter extends RecyclerView.Adapter<DonNhanAdapter.DonMuaVi
 
     public interface OnItemClickListener {
         void onItemClickDonMua(View view, int position, long id);
+        void onBuyAgainClick(DonHang donHang);
+        void onRateClick(DonHang donhang);
     }
 
         public DonNhanAdapter(List<DonHang> donHangList, OnItemClickListener onItemClickListener) {
@@ -52,8 +57,42 @@ public class DonNhanAdapter extends RecyclerView.Adapter<DonNhanAdapter.DonMuaVi
         holder.tensach.setText(donhang.getTenSach());
         holder.dongia.setText(formatCurrency(Long.parseLong(donhang.getDonGiaBan())));
         holder.soluong.setText("Số lượng: "+donhang.getSoLuong());
+        holder.ngaynhan.setText(convertDateFormat(donhang.getNgayGiaoHang()));
+        holder.btnBuyAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onBuyAgainClick(donhang);
+                }
+            }
+        });
+        holder.btnRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onRateClick(donhang);
+                }
+            }
+        });
     }
-
+    private String convertDateFormat(String dateStr) {
+        if (dateStr == null || dateStr.isEmpty()) {
+            return "01-01-2000";
+        }
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            Date date = inputFormat.parse(dateStr);
+            if (date != null) {
+                SimpleDateFormat outputFormat = new SimpleDateFormat(" dd-MM-yyyy", Locale.getDefault());
+                return outputFormat.format(date);
+            } else {
+                return "01-01-2001";
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return "01-01-2002";
+        }
+    }
     public static String formatCurrency(long number) {
         // Tạo đối tượng DecimalFormatSymbols để tùy chỉnh ký tự phân cách
         DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.getDefault());
@@ -70,7 +109,7 @@ public class DonNhanAdapter extends RecyclerView.Adapter<DonNhanAdapter.DonMuaVi
     }
 
     public static class DonMuaViewHolder extends RecyclerView.ViewHolder {
-        TextView tensach, dongia, soluong;
+        TextView tensach, dongia, soluong, ngaynhan,btnRate,btnBuyAgain;
         ImageView hinhanh;
 
         public DonMuaViewHolder(View itemView) {
@@ -79,6 +118,9 @@ public class DonNhanAdapter extends RecyclerView.Adapter<DonNhanAdapter.DonMuaVi
             dongia = itemView.findViewById(R.id.dongiaDN);
             soluong = itemView.findViewById(R.id.soluongDN);
             hinhanh = itemView.findViewById(R.id.hinhanhDN);
+            ngaynhan = itemView.findViewById(R.id.ngaynhan);
+            btnRate = itemView.findViewById(R.id.btnRate);
+            btnBuyAgain = itemView.findViewById(R.id.btnBuyAgain);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

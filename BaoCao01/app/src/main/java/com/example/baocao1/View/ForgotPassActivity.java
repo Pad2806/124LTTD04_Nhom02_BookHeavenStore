@@ -105,6 +105,9 @@ public class ForgotPassActivity extends AppCompatActivity {
                     if(error.equals("FALSE")){
                         Toast.makeText(getApplicationContext(), "Email hoặc Số điện thoại không hợp lệ", Toast.LENGTH_SHORT).show();
                     }
+                    if(error.equals("LOCK")){
+                        Toast.makeText(getApplicationContext(), "Tài khoản đã bị khóa", Toast.LENGTH_SHORT).show();
+                    }
                     if(error.equals("TRUE")){
                         if (validateInputs(email, sdt, matkhau, xacnhanmatkhau)) {
                             dialog.show();

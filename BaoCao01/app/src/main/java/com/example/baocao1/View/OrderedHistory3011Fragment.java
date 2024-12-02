@@ -50,7 +50,7 @@ public class OrderedHistory3011Fragment extends Fragment  implements DonMuaAdapt
         recyclerViewDonMua.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         recyclerViewDonMua.setAdapter(adapter);
         donHangList = new ArrayList<>();
-        adapter = new DonMuaAdapter(donHangList,this);
+        adapter = new DonMuaAdapter(donHangList,this,getContext());
         recyclerViewDonMua.setAdapter(adapter);
 
         dialog = new Dialog(getContext());
@@ -99,6 +99,12 @@ public class OrderedHistory3011Fragment extends Fragment  implements DonMuaAdapt
 //        });
         fetchDonNhan(LoginActivity.MaKhachHang);
     return view;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Gọi lại hàm để tải lại dữ liệu
+        fetchDonNhan(LoginActivity.MaKhachHang);
     }
     private void fetchDonNhan(String MaKhachHang) {
         ApiService apiService = ApiController.getRetrofitInstance().create(ApiService.class);

@@ -1,5 +1,9 @@
 package com.example.baocao1.Adapter;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,11 +11,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.baocao1.API.APICapNhat;
+import com.example.baocao1.API.ApiController;
+import com.example.baocao1.API.ApiService;
 import com.example.baocao1.Model.DonHang;
+import com.example.baocao1.Model.MuaSach;
 import com.example.baocao1.R;
+import com.example.baocao1.View.LoginActivity;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -20,18 +30,26 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatViewHolder> {
     private List<DonHang> donHangList;
     private static OnItemClickListener onItemClickListener;
+    private Context context;
+    private static DonHang donhang;
 
     public interface OnItemClickListener {
         void onItemClickDonMua(View view, int position, long id);
     }
 
-        public DonMuaAdapter(List<DonHang> donHangList, OnItemClickListener onItemClickListener) {
+        public DonMuaAdapter(List<DonHang> donHangList, OnItemClickListener onItemClickListener, Context context) {
         this.donHangList = donHangList;
         this.onItemClickListener=onItemClickListener;
+        this.context=context;
     }
 //    public DonMuaAdapter(List<DonHang> donHangList) {
 //        this.donHangList = donHangList;
@@ -46,7 +64,7 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
 
     @Override
     public void onBindViewHolder(@NonNull DonDatViewHolder holder, int position) {
-        DonHang donhang = donHangList.get(position);
+        donhang = donHangList.get(position);
         // Load image using Glide
         String imageUrl = donhang.getHinhAnh().replace("https://drive.google.com/file/d/", "https://drive.google.com/uc?export=view&id=");
         Glide.with(holder.itemView.getContext())
@@ -57,6 +75,32 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
         holder.soluong.setText("Số lượng: "+donhang.getSoLuong());
         holder.giodat.setText(donhang.getGioDatHang());
         holder.ngaydat.setText(convertDateFormat(donhang.getNgayDatHang()));
+        // Kiểm tra thời gian đặt hàng để ẩn/hiện btnhuy
+        String ngayDat = donhang.getNgayDatHang(); // Ví dụ: "2024-12-02"
+        String gioDat = donhang.getGioDatHang();  // Ví dụ: "08:00:00"
+        String fullDateTime = ngayDat + " " + gioDat; // Kết hợp ngày và giờ
+        if(donhang.getTrangThai().equals("Đã hủy")){
+            holder.btnhuy.setVisibility(View.GONE);
+            holder.btndahuy.setVisibility(View.VISIBLE);
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        try {
+            // Phân tích chuỗi thời gian
+            Date dateOrder = sdf.parse(fullDateTime);
+            long currentTime = System.currentTimeMillis(); // Lấy thời gian hiện tại
+            long orderTime = dateOrder != null ? dateOrder.getTime() : 0;
+
+            // Kiểm tra thời gian: Nếu vượt quá 12 giờ
+            if ((currentTime - orderTime) > 12 * 60 * 60 * 1000) {
+                holder.btnhuy.setVisibility(View.GONE); // Ẩn TextView btnhuy
+            } else {
+                holder.btnhuy.setVisibility(View.VISIBLE); // Hiện TextView btnhuy
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+            holder.btnhuy.setVisibility(View.GONE); // Ẩn nếu có lỗi phân tích thời gian
+        }
+
     }
     private String convertDateFormat(String dateStr) {
         if (dateStr == null || dateStr.isEmpty()) {
@@ -93,7 +137,7 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
     }
 
     public static class DonDatViewHolder extends RecyclerView.ViewHolder {
-        TextView tensach, dongia, soluong,giodat,ngaydat;
+        TextView tensach, dongia, soluong,giodat,ngaydat,btnhuy,btndahuy;
         ImageView hinhanh;
 
         public DonDatViewHolder(View itemView) {
@@ -104,6 +148,8 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
             hinhanh = itemView.findViewById(R.id.hinhanhDM);
             giodat = itemView.findViewById(R.id.giodat);
             ngaydat = itemView.findViewById(R.id.ngaydat);
+            btnhuy = itemView.findViewById(R.id.btnhuy);
+            btndahuy = itemView.findViewById(R.id.btndahuy);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -112,6 +158,69 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
                     }
                 }
             });
+            btnhuy.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showDialog(v);
+                }
+            });
+        }
+        private void showDialog(View view) {
+            Dialog dialog = new Dialog(view.getContext());
+            dialog.setContentView(R.layout.layout_dialog_cancelorder);
+            Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(view.getContext(),R.drawable.dialog_ordersuccess_bg));
+            dialog.setCancelable(false);
+
+            Dialog dialog1 = new Dialog(view.getContext());
+            dialog1.setContentView(R.layout.layout_dialog_cancelordersuccessed);
+            Objects.requireNonNull(dialog1.getWindow()).setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog1.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(view.getContext(),R.drawable.dialog_ordersuccess_bg));
+            dialog1.setCancelable(false);
+
+            TextView btnCancel = dialog.findViewById(R.id.btnCancel);
+            TextView btnAgree = dialog.findViewById(R.id.buyAgree);
+
+            btnCancel.setOnClickListener(v -> dialog.dismiss());
+
+            btnAgree.setOnClickListener(v -> {
+                btnhuy.setVisibility(View.GONE);
+                btndahuy.setVisibility(View.VISIBLE);
+                dialog.dismiss(); // Đóng dialog đầu tiên
+                dialog1.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        huyDonHang(donhang.getMaDonHang());
+                        dialog1.dismiss();
+                    }
+                }, 1000);// Hiển thị dialog thứ hai
+            });
+
+            dialog.show();
+        }
+        private void huyDonHang(String madh) {
+            ApiService apiService = ApiController.getRetrofitInstance().create(ApiService.class);
+            Call<APICapNhat> call = apiService.huyDonHang(madh);
+            call.enqueue(new Callback<APICapNhat>() {
+                @Override
+                public void onResponse(Call<APICapNhat> call, Response<APICapNhat> response) {
+                    if (response.isSuccessful() && response.body() != null) {
+                        APICapNhat apiResponse = response.body();
+                        Log.d("Hủy thành công", madh+apiResponse.getMessage());
+//                    Toast.makeText(getApplicationContext(), "onResponse"+apiResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Log.d("Hủy thất bại", "Error: " +madh+ response.message());
+//                    Toast.makeText(getApplicationContext(), "onResponse"+response.message(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+                @Override
+                public void onFailure(Call<APICapNhat> call, Throwable t) {
+                    Log.d("API", "Lỗi kết nối"+madh+t.getMessage());
+//                Toast.makeText(getApplicationContext(), "onFailure"+t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
+
 }
