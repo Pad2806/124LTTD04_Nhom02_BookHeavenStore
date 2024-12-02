@@ -37,8 +37,13 @@ if ($result && $result->num_rows > 0) {
 }
 
 // Thêm đơn hàng vào bảng DonHang
-$sqldh = "INSERT INTO DonHang (MaDonHang, MaKhachHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang, TrangThai) 
-          VALUES (?, ?, ?, ?, ?, ?, CURRENT_DATE, CURRENT_TIME,'Chờ xác nhận')";
+if($PTTT=='TTTTuyen'){
+    $sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai, NgayThanhToan) 
+          VALUES(?, ?, ?, ?, ?, ?, CURRENT_DATE, CURRENT_TIME,'Chờ xác nhận', CURRENT_DATE)";
+}else{
+    $sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai) 
+          VALUES(?, ?, ?, ?, ?, ?, CURRENT_DATE, CURRENT_TIME,'Chờ xác nhận')";
+}
 $stmt = $conn->prepare($sqldh);
 $stmt->bind_param("ssddds", $MaDonHang, $MaKhachHang, $TongTien, $GiamGia, $PhiVanChuyen, $PTTT);
 
@@ -50,10 +55,10 @@ foreach ($sachMuaList as $sachMua) {
     $MaSach = $sachMua['MaSach'];
     $SoLuong = $sachMua['SoLuong'];
     $DonGia = $sachMua['DonGiaBan'];
-    $sqlmadh = "SELECT taoMaDanhGiamoi() AS ma_danh_gia";
-    $resultdg = $conn->query($sqlmadh);
+    $sqlmadg = "SELECT taoMaDanhGiamoi() AS ma_danh_gia";
+    $resultdg = $conn->query($sqlmadg);
 
-    if ($resultdg && $result->num_rows > 0) {
+    if ($resultdg && $resultdg->num_rows > 0) {
         // Lấy kết quả
         $row = $resultdg->fetch_assoc();
         $MaDanhGia =$row['ma_danh_gia'];

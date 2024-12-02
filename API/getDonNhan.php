@@ -2,12 +2,13 @@
 include("connect.php");
 $maKH = $_GET['MaKhachHang'];
 // $maKH = isset($_POST['MaKhachHang']) ? $_POST['MaKhachHang'] : 'KH00000001';
-$sql = "SELECT ChiTietDonHang.*,TenSach,DonGiaBan,HinhAnh 
+$sql = "SELECT ChiTietDonHang.*,TenSach,DonGiaBan,HinhAnh, NgayGiaoHang
         FROM ChiTietDonHang,donhang,sach 
         WHERE TrangThai=N'Đã giao' 
             and MaKhachHang=?
             and DonHang.MaDonHang=ChiTietDonHang.MaDonHang 
-            and ChiTietDonHang.MaSach=Sach.MaSach;";
+            and ChiTietDonHang.MaSach=Sach.MaSach
+        ORDER BY NgayGiaoHang DESC;";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $maKH);
 $stmt->execute();

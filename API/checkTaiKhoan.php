@@ -17,7 +17,11 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo json_encode(array("message" => "TRUE"));
+    if($row['TrangThai']!=0){
+        echo json_encode(array("message" => "LOCK"));
+    }else{
+        echo json_encode(array("message" => "TRUE"));
+    }
 }else{
     echo json_encode(array("message" => "FALSE"));
 }

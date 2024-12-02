@@ -11,11 +11,16 @@ $result = $stmt->get_result();
 $data = array();
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $data['status'] = 'success';
-    $data['message'] = 'Đăng nhập thành công';
-    $data['MaKhachHang'] = $row['MaKhachHang'];
-    $data['TenKhachHang'] = $row['TenKhachHang'];
-    $data['MaGioHang'] = $row['MaGioHang'];
+    if($row['TrangThai']!=0){
+        $data['status'] = 'failure';
+        $data['message'] = 'Tài khoản đã bị khóa';
+    }else{
+        $data['status'] = 'success';
+        $data['message'] = 'Đăng nhập thành công';
+        $data['MaKhachHang'] = $row['MaKhachHang'];
+        $data['TenKhachHang'] = $row['TenKhachHang'];
+        $data['MaGioHang'] = $row['MaGioHang'];
+    }
 } else {
     $data['status'] = 'failure';
     $data['message'] = 'Vui lòng nhập lại thông tin';

@@ -2,7 +2,7 @@
 include("connect.php");
 $maKH = $_GET['MaKhachHang'];
 // $maKH = isset($_POST['MaKhachHang']) ? $_POST['MaKhachHang'] : 'KH00000001';
-$sql = "SELECT ChiTietDonHang.*,TenSach,DonGiaBan,HinhAnh,NgayDatHang,GioDatHang 
+$sql = "SELECT ChiTietDonHang.*,TenSach,DonGiaBan,HinhAnh,NgayDatHang,GioDatHang, TrangThai
         FROM ChiTietDonHang,donhang,sach 
         WHERE TrangThai<>N'Đã giao' 
             and MaKhachHang=?

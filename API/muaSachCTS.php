@@ -20,30 +20,35 @@ if ($result && $result->num_rows > 0) {
 } else {
     echo "Không có kết quả hoặc lỗi truy vấn.";
 }
-$sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai) 
+if($PTTT=='TTTTuyen'){
+    $sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai, NgayThanhToan) 
+          VALUES(?, ?, ?, ?, ?, ?, CURRENT_DATE, CURRENT_TIME,'Chờ xác nhận', CURRENT_DATE)";
+}else{
+    $sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai) 
           VALUES(?, ?, ?, ?, ?, ?, CURRENT_DATE, CURRENT_TIME,'Chờ xác nhận')";
+}
+
 $stmt = $conn->prepare($sqldh);
 $stmt->bind_param("ssssss", $MaDonHang, $MaKhachHang, $TongTien, $GiamGia, $PhiVanChuyen, $PTTT);
 $executeResult = $stmt->execute(); // Chạy câu lệnh SQL
 header('Content-Type: application/json; charset=UTF-8');
 
-$sqlmadh = "SELECT taoMaDanhGiamoi() AS ma_danh_gia";
-$resultdg = $conn->query($sqlmadh);
-
-if ($resultdg && $result->num_rows > 0) {
-    // Lấy kết quả
-    $row = $resultdg->fetch_assoc();
-    $MaDanhGia =$row['ma_danh_gia'];
-} else {
-    echo "Không có kết quả hoặc lỗi truy vấn.";
-}
-
 if ($executeResult) {
+    $sqlmadg = "SELECT taoMaDanhGiamoi() AS ma_danh_gia";
+    $resultdg = $conn->query($sqlmadg);
+
+    if ($resultdg && $resultdg->num_rows > 0) {
+        // Lấy kết quả
+        $row = $resultdg->fetch_assoc();
+        $MaDanhGia =$row['ma_danh_gia'];
+    } else {
+        echo "Không có kết quả hoặc lỗi truy vấn.";
+    }
     // Cập nhật vào bảng ChiTietDonHang
     $sqlctdh = "INSERT INTO ChiTietDonHang(MaDonHang, MaSach, SoLuong, DonGia, MaDanhGia) 
                 VALUES(?, ?, ?, ?, ?)";
     $stmtCT = $conn->prepare($sqlctdh);
-    $stmtCT->bind_param("ssss", $MaDonHang, $MaSach, $SoLuong, $DonGia, $MaDanhGia);
+    $stmtCT->bind_param("sssss", $MaDonHang, $MaSach, $SoLuong, $DonGia, $MaDanhGia);
     $executeResultCT = $stmtCT->execute();
 
     if ($executeResultCT) {
