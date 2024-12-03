@@ -22,6 +22,7 @@ import com.example.baocao1.Model.DonHang;
 import com.example.baocao1.Model.MuaSach;
 import com.example.baocao1.R;
 import com.example.baocao1.View.LoginActivity;
+import com.example.baocao1.View.OrderBuyUserActivity;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -40,7 +41,6 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
     private List<DonHang> donHangList;
     private static OnItemClickListener onItemClickListener;
     private Context context;
-    private static DonHang donhang;
 
     public interface OnItemClickListener {
         void onItemClickDonMua(View view, int position, long id);
@@ -59,12 +59,12 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
     @Override
     public DonDatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_donmua, parent, false);
-        return new DonDatViewHolder(view);
+        return new DonDatViewHolder(view, donHangList);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DonDatViewHolder holder, int position) {
-        donhang = donHangList.get(position);
+        DonHang donhang = donHangList.get(position);
         // Load image using Glide
         String imageUrl = donhang.getHinhAnh().replace("https://drive.google.com/file/d/", "https://drive.google.com/uc?export=view&id=");
         Glide.with(holder.itemView.getContext())
@@ -79,28 +79,31 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
         String ngayDat = donhang.getNgayDatHang(); // Ví dụ: "2024-12-02"
         String gioDat = donhang.getGioDatHang();  // Ví dụ: "08:00:00"
         String fullDateTime = ngayDat + " " + gioDat; // Kết hợp ngày và giờ
-        if(donhang.getTrangThai().equals("Đã hủy")){
+        // Kiểm tra trạng thái "Đã hủy"
+        if (donhang.getTrangThai().equals("Đã hủy")) {
             holder.btnhuy.setVisibility(View.GONE);
             holder.btndahuy.setVisibility(View.VISIBLE);
-        }
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-        try {
-            // Phân tích chuỗi thời gian
-            Date dateOrder = sdf.parse(fullDateTime);
-            long currentTime = System.currentTimeMillis(); // Lấy thời gian hiện tại
-            long orderTime = dateOrder != null ? dateOrder.getTime() : 0;
+        } else {
+            // Nếu chưa hủy, kiểm tra thời gian
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+            try {
+                Date dateOrder = sdf.parse(fullDateTime);
+                long currentTime = System.currentTimeMillis(); // Lấy thời gian hiện tại
+                long orderTime = dateOrder != null ? dateOrder.getTime() : 0;
 
-            // Kiểm tra thời gian: Nếu vượt quá 12 giờ
-            if ((currentTime - orderTime) > 12 * 60 * 60 * 1000) {
-                holder.btnhuy.setVisibility(View.GONE); // Ẩn TextView btnhuy
-            } else {
-                holder.btnhuy.setVisibility(View.VISIBLE); // Hiện TextView btnhuy
+                // Nếu vượt quá 12 giờ, ẩn nút hủy
+                if ((currentTime - orderTime) > 12 * 60 * 60 * 1000) {
+                    holder.btnhuy.setVisibility(View.GONE);
+                    holder.btndahuy.setVisibility(View.GONE);
+                } else {
+                    holder.btnhuy.setVisibility(View.VISIBLE);
+                    holder.btndahuy.setVisibility(View.GONE);
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
+                holder.btnhuy.setVisibility(View.GONE); // Ẩn nếu có lỗi phân tích thời gian
             }
-        } catch (ParseException e) {
-            e.printStackTrace();
-            holder.btnhuy.setVisibility(View.GONE); // Ẩn nếu có lỗi phân tích thời gian
         }
-
     }
     private String convertDateFormat(String dateStr) {
         if (dateStr == null || dateStr.isEmpty()) {
@@ -136,12 +139,14 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
         return donHangList.size();
     }
 
-    public static class DonDatViewHolder extends RecyclerView.ViewHolder {
+    public class DonDatViewHolder extends RecyclerView.ViewHolder {
         TextView tensach, dongia, soluong,giodat,ngaydat,btnhuy,btndahuy;
         ImageView hinhanh;
+        private List<DonHang> donHangList;
 
-        public DonDatViewHolder(View itemView) {
+        public DonDatViewHolder(View itemView, List<DonHang> donHangList) {
             super(itemView);
+            this.donHangList = donHangList;
             tensach = itemView.findViewById(R.id.tensachDM);
             dongia = itemView.findViewById(R.id.dongiaDM);
             soluong = itemView.findViewById(R.id.soluongDM);
@@ -166,6 +171,10 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
             });
         }
         private void showDialog(View view) {
+            // Lấy đơn hàng tại vị trí cụ thể
+            int position = getAdapterPosition();
+            if (position == RecyclerView.NO_POSITION) return; // Kiểm tra nếu vị trí không hợp lệ
+            DonHang currentDonHang = donHangList.get(position);
             Dialog dialog = new Dialog(view.getContext());
             dialog.setContentView(R.layout.layout_dialog_cancelorder);
             Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -191,7 +200,7 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        huyDonHang(donhang.getMaDonHang());
+                        huyDonHang(currentDonHang.getMaDonHang());
                         dialog1.dismiss();
                     }
                 }, 1000);// Hiển thị dialog thứ hai
@@ -209,6 +218,13 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
                         APICapNhat apiResponse = response.body();
                         Log.d("Hủy thành công", madh+apiResponse.getMessage());
 //                    Toast.makeText(getApplicationContext(), "onResponse"+apiResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                        // Cập nhật trạng thái trong danh sách hiển thị
+                        for (DonHang donHang : donHangList) {
+                            if (donHang.getMaDonHang().equals(madh)) {
+                                donHang.setTrangThai("Đã hủy");
+                            }
+                        }
+                        notifyDataSetChanged(); // Refresh giao diện
                     } else {
                         Log.d("Hủy thất bại", "Error: " +madh+ response.message());
 //                    Toast.makeText(getApplicationContext(), "onResponse"+response.message(), Toast.LENGTH_SHORT).show();

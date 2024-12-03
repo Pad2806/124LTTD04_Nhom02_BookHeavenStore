@@ -136,8 +136,21 @@ public class PaymentActivity extends AppCompatActivity implements SachMuaAdapter
         String source = getIntent().getStringExtra("From");
 //        Toast.makeText(getApplicationContext(), source, Toast.LENGTH_SHORT).show();
         if (source != null) {
-            if (source.equals("DetailsHotBookActivity") | source.equals("BoughtHistoryFragment")) {
-                // Xử lý logic khi được gọi từ DetailsHotBookActivity
+            if (source.equals("DetailsHotBookActivity")) {
+                listSachMua_CTS = new ArrayList<>();
+                adapter_CTS = new SachMua_CTSAdapter(listSachMua_CTS,this);
+                adapter_CTS.setOnTotalPriceChangeListener(new SachMua_CTSAdapter.OnTotalPriceChangeListener() {
+                    @Override
+                    public void onTotalPriceChange(long totalPrices) {
+                        // Hiển thị tổng tiền
+                        price.setText(SachMua_CTSAdapter.formatCurrency(totalPrices));
+                        updateTongThanhToan(price.getText().toString(),giamgiatt.getText().toString(),vanchuyentt.getText().toString());
+                    }
+                });
+                recyclerViewThanhToan.setAdapter(adapter_CTS);
+                fetchSachMua_ChiTietSach(getIntent().getStringExtra("MaSach"));
+            }
+            else if (source.equals("BoughtHistoryFragment")) {
                 listSachMua_CTS = new ArrayList<>();
                 adapter_CTS = new SachMua_CTSAdapter(listSachMua_CTS,this);
                 adapter_CTS.setOnTotalPriceChangeListener(new SachMua_CTSAdapter.OnTotalPriceChangeListener() {
@@ -152,7 +165,6 @@ public class PaymentActivity extends AppCompatActivity implements SachMuaAdapter
                 fetchSachMua_ChiTietSach(getIntent().getStringExtra("MaSach"));
             }
             else if (source.equals("ShoppingCartFragment")) {
-                // Xử lý logic khi được gọi từ ShoppingCartFragment
                 listSachMua_GH = new ArrayList<>();
                 adapter = new SachMuaAdapter(listSachMua_GH,this);
                 adapter.setOnTotalPriceChangeListener(new SachMuaAdapter.OnTotalPriceChangeListener() {
@@ -165,8 +177,10 @@ public class PaymentActivity extends AppCompatActivity implements SachMuaAdapter
 
                 recyclerViewThanhToan.setAdapter(adapter);
                 String dsSach = getIntent().getStringExtra("DSSach");
+//                Toast.makeText(getApplicationContext(), "DSSach: "+dsSach, Toast.LENGTH_SHORT).show();
                 if (dsSach != null && !dsSach.isEmpty()) {
-                    fetchSachMua_GioHang(dsSach);
+                    fetchSachMua_GioHang(LoginActivity.MaKhachHang,dsSach);
+                    Log.d("Danh sách sách: ",LoginActivity.MaKhachHang+"  "+dsSach);
                 } else {
                     Toast.makeText(getApplicationContext(), "Vui lòng chọn lại sách muốn mua", Toast.LENGTH_SHORT).show();
                     finish();
@@ -276,9 +290,9 @@ public class PaymentActivity extends AppCompatActivity implements SachMuaAdapter
     private void updateTongThanhToan(String tongTien,String giamGia,String vanChuyen){
         totalPricett.setText(TinhTongTien(tongTien,vanChuyen,giamGia));
     }
-    private void fetchSachMua_GioHang(String DSSachMua) {
+    private void fetchSachMua_GioHang(String maKH,String DSSachMua) {
         ApiService apiService = ApiController.getRetrofitInstance().create(ApiService.class);
-        Call<List<Sach_GioHang>> call = apiService.getSachMuaGH(DSSachMua);
+        Call<List<Sach_GioHang>> call = apiService.getSachMuaGH(maKH,DSSachMua);
         call.enqueue(new Callback<List<Sach_GioHang>>() {
             @Override
             public void onResponse(Call<List<Sach_GioHang>> call, Response<List<Sach_GioHang>> response) {

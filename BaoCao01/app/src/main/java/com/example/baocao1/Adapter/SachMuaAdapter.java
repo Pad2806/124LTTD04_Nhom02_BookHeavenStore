@@ -62,8 +62,6 @@ public class SachMuaAdapter extends RecyclerView.Adapter<SachMuaAdapter.SachMuaV
                 .into(holder.hinhanh);
         holder.tensach.setText(sach.getTenSach());
         holder.soluong.setText(sach.getSoLuong());
-//        long tinhthanhtien=Integer.parseInt(sach.getDonGiaBan())*Integer.parseInt(sach.getSoLuong());
-//        holder.thanhtien.setText(formatCurrency(tinhthanhtien));
         holder.dongia.setText(formatCurrency(Long.parseLong(sach.getDonGiaBan())));
         // Nếu là lần đầu tiên hiển thị, tính toán tổng tiền ban đầu
         tongtien += Long.parseLong(sach.getSoLuong()) * Long.parseLong(sach.getDonGiaBan());

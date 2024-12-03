@@ -90,6 +90,7 @@ public class ShoppingCartFragment extends Fragment implements ShoppingCartAdapte
                 Intent intent = new Intent(getContext(), PaymentActivity.class);
                 String selectedBooks = String.join(",", adapterGH.getSelectedBooks());
                 intent.putExtra("DSSach", selectedBooks);
+//                Toast.makeText(getContext(), "DSSach: "+selectedBooks, Toast.LENGTH_SHORT).show();
                 intent.putExtra("From", "ShoppingCartFragment");
                 startActivity(intent);
             }
@@ -136,6 +137,12 @@ public class ShoppingCartFragment extends Fragment implements ShoppingCartAdapte
             }
         });
         return view;
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        ShoppingCartAdapter.resetSelectedBooks();
+        reset();
     }
     @Override
     public void onResume() {
@@ -198,24 +205,5 @@ public class ShoppingCartFragment extends Fragment implements ShoppingCartAdapte
         Intent intent = new Intent(getContext(), DetailsHotBookActivity.class);
         intent.putExtra("MaSach", sach.getMaSach()); // Truyền mã sản phẩm
         startActivity(intent);
-    }
-    private void UpdateOrderBtn() {
-        numOrder.setText(String.valueOf(count));
-
-        if (count <= 1) {
-            minus.setAlpha(0.5f);
-            minus.setEnabled(false);
-        } else {
-            minus.setAlpha(1.0f);
-            minus.setEnabled(true);
-        }
-
-        if (count >= 10) {
-            plus.setAlpha(0.5f);
-            plus.setEnabled(false);
-        } else {
-            plus.setAlpha(1.0f);
-            plus.setEnabled(true);
-        }
     }
 }

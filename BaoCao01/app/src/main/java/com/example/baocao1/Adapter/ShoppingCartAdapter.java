@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.example.baocao1.API.APICapNhat;
 import com.example.baocao1.API.ApiController;
 import com.example.baocao1.API.ApiService;
+import com.example.baocao1.Model.ChiTietSach;
 import com.example.baocao1.Model.Sach_GioHang;
 import com.example.baocao1.R;
 import com.example.baocao1.View.LoginActivity;
@@ -35,9 +36,10 @@ import retrofit2.Response;
 
 public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapter.ShoppingCartViewHolder> {
     private static List<Sach_GioHang> sachList;
-    private static ArrayList<String> selectedBooks;;
+    private static ArrayList<String> selectedBooks= new ArrayList<>();;
     private static OnItemClickListener onItemClickListener;
     public static long tongtien=0;
+    private ChiTietSach sach;
     private OnTotalPriceChangeListener totalPriceChangeListener;
     public interface OnTotalPriceChangeListener {
         void onTotalPriceChange(long totalPrices);
@@ -57,9 +59,6 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
             selectedBooks = new ArrayList<>();
         }
     }
-//    public ShoppingCartAdapter(List<Sach_GioHang> sachList) {
-//        this.sachList = sachList;
-//    }
 
     @NonNull
     @Override
@@ -184,6 +183,9 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
         return selectedBooks; // Trả về danh sách mã sách được chọn
     }
     public static void resetSelectedBooks() {
+//        if (selectedBooks == null) {
+//            selectedBooks = new ArrayList<>(); // Khởi tạo nếu chưa có
+//        }
         selectedBooks.clear();
     }
     public String getTongTien() {

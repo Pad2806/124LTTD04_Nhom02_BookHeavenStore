@@ -90,7 +90,7 @@ public interface ApiService {
     Call<List<ChiTietSach>> getSachMuaCTS(@Query("MaSach") String MaSach);
 
     @GET("getSachMua_GioHang.php")
-    Call<List<Sach_GioHang>> getSachMuaGH(@Query("DSSachMua") String list);
+    Call<List<Sach_GioHang>> getSachMuaGH(@Query("MaKhachHang") String makh,@Query("DSSachMua") String list);
 
     @GET("updateSach_GioHang.php")
     Call<APICapNhat> updateSoLuong(@Query("MaGioHang") String MaGioHang,@Query("MaSach") String MaSach,@Query("SoLuong") String SoLuong);
@@ -105,13 +105,6 @@ public interface ApiService {
                                 @Query("PTTT") String PTTT,
                                 @Query("TongTien") String TongTien);
 
-//    @POST("muaSach.php")
-//    Call<APICapNhat> muaSach(@Query("MaKhachHang") String maKH,
-//                                @Body List<Sach_GioHang> sachMuaList,
-//                                @Query("GiamGia") String GiamGia,
-//                                @Query("PhiVanChuyen") String PhiVanChuyen,
-//                                @Query("PTTT") String PTTT,
-//                                @Query("TongTien") String TongTien);
     @POST("muaSach.php")
     Call<APICapNhat> muaSach(@Body MuaSach sachmua);
 

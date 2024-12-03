@@ -209,10 +209,7 @@ public class DetailsHotBookActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         dialog1.dismiss();
-                        ShoppingCartAdapter.resetSelectedBooks();
-                        ShoppingCartFragment.reset();
-//                        startActivity(new Intent(DetailsHotBookActivity.this, DetailsHotBookActivity.class));
-//                        startActivity(new Intent(DetailsHotBookActivity.this, DetailsHotBookActivity.class));
+//                        ShoppingCartFragment.reset();
                     }
                 }, 1000);
             }
