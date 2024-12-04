@@ -235,10 +235,10 @@ public class PaymentActivity extends AppCompatActivity implements SachMuaAdapter
                         MuaSach muaSach=new MuaSach(maKH,maGH,giamgia,phivc,pttt,tongtien,sachMuaList);
 //                        Log.d("Request Data", new Gson().toJson(muaSach));
                         muaSach(muaSach);
+                        ShoppingCartFragment.reset();
                     }
                     int diem= Integer.parseInt(tongtien)/1000;
                     diemtichluy.setText("Bạn đã tích lũy thêm "+diem+" điểm");
-                    ShoppingCartFragment.reset();
                     buyDialog.show();
                 }
             }

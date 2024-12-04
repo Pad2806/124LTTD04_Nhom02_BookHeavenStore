@@ -75,6 +75,7 @@ public class DonNhanAdapter extends RecyclerView.Adapter<DonNhanAdapter.DonMuaVi
                 public void onClick(View v) {
                     if (onItemClickListener != null) {
                         onItemClickListener.onRateClick(donhang);
+                        holder.btnRate.setVisibility(View.INVISIBLE);
                     }
                 }
             });

@@ -63,7 +63,7 @@
                         android:clipToOutline="true"
                         android:scaleType="fitXY"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/ava1"
+                        android:src="@drawable/quangthao"
                         app:backgroundTint="@null" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -132,7 +132,7 @@
                         android:clipToOutline="true"
                         android:scaleType="fitXY"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/ava1"
+                        android:src="@drawable/anhduy"
                         app:backgroundTint="@null" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -201,7 +201,7 @@
                         android:clipToOutline="true"
                         android:scaleType="fitXY"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/ava1"
+                        android:src="@drawable/minhnhat"
                         app:backgroundTint="@null" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
