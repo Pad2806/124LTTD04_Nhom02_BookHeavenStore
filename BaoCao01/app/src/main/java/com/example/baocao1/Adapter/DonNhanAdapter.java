@@ -66,14 +66,19 @@ public class DonNhanAdapter extends RecyclerView.Adapter<DonNhanAdapter.DonMuaVi
                 }
             }
         });
-        holder.btnRate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (onItemClickListener != null) {
-                    onItemClickListener.onRateClick(donhang);
+        if(!donhang.getDanhGia().equals("0") && !donhang.getNoiDung().equals("NULL")){
+            holder.btnRate.setVisibility(View.INVISIBLE);
+        }else{
+            holder.btnRate.setVisibility(View.VISIBLE);
+            holder.btnRate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onItemClickListener != null) {
+                        onItemClickListener.onRateClick(donhang);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
     private String convertDateFormat(String dateStr) {
         if (dateStr == null || dateStr.isEmpty()) {

@@ -200,7 +200,7 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        huyDonHang(currentDonHang.getMaDonHang());
+                        huyDonHang(LoginActivity.MaKhachHang,currentDonHang.getMaDonHang());
                         dialog1.dismiss();
                     }
                 }, 1000);// Hiển thị dialog thứ hai
@@ -208,9 +208,9 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
 
             dialog.show();
         }
-        private void huyDonHang(String madh) {
+        private void huyDonHang(String makh,String madh ) {
             ApiService apiService = ApiController.getRetrofitInstance().create(ApiService.class);
-            Call<APICapNhat> call = apiService.huyDonHang(madh);
+            Call<APICapNhat> call = apiService.huyDonHang(makh,madh);
             call.enqueue(new Callback<APICapNhat>() {
                 @Override
                 public void onResponse(Call<APICapNhat> call, Response<APICapNhat> response) {

@@ -20,13 +20,19 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.baocao1.API.APICapNhat;
 import com.example.baocao1.API.ApiController;
 import com.example.baocao1.API.ApiService;
+import com.example.baocao1.Adapter.DanhGiaAdapter;
 import com.example.baocao1.Adapter.ShoppingCartAdapter;
+import com.example.baocao1.Adapter.TacGiaAdapter;
 import com.example.baocao1.Model.ChiTietSach;
+import com.example.baocao1.Model.DanhGiaKH;
+import com.example.baocao1.Model.TacGia;
 import com.example.baocao1.R;
 
 import java.io.File;
@@ -35,6 +41,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -55,6 +63,9 @@ public class DetailsHotBookActivity extends AppCompatActivity {
     private PdfRenderer.Page currentPage;
     private int currentPageIndex = 7;
     private ChiTietSach sach;
+    private RecyclerView recyclerViewdanhgiakh;
+    private DanhGiaAdapter adapter;
+    private List<DanhGiaKH> danhGiaKHS;
     @SuppressLint("UseCompatLoadingForDrawables")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +79,7 @@ public class DetailsHotBookActivity extends AppCompatActivity {
         btnClosePdf=findViewById(R.id.btnClosePdf);
         btnPrevPage=findViewById(R.id.btnPrevPage);
         btnNextPage=findViewById(R.id.btnNextPage);
-
+        recyclerViewdanhgiakh=findViewById(R.id.recyclerViewdanhgiakh);
         tieude=findViewById(R.id.tieude);
         anhSach=findViewById(R.id.anhSach);
         tenSach=findViewById(R.id.tenSach);
@@ -77,7 +88,10 @@ public class DetailsHotBookActivity extends AppCompatActivity {
         luotban=findViewById(R.id.luotban);
         tinhtrang=findViewById(R.id.tinhtrang);
         mota=findViewById(R.id.mota);
-
+        recyclerViewdanhgiakh.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        danhGiaKHS = new ArrayList<>();
+        adapter = new DanhGiaAdapter(danhGiaKHS);
+        recyclerViewdanhgiakh.setAdapter(adapter);
         anhSach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -214,7 +228,30 @@ public class DetailsHotBookActivity extends AppCompatActivity {
                 }, 1000);
             }
         });
-
+        fetchDanhGiaKH(maSach);
+    }
+    private void fetchDanhGiaKH(String masach) {
+        Toast.makeText(getApplicationContext().getApplicationContext(), masach, Toast.LENGTH_SHORT).show();
+        ApiService apiService = ApiController.getRetrofitInstance().create(ApiService.class);
+        Call<List<DanhGiaKH>> call = apiService.getDanhGia(masach);
+        call.enqueue(new Callback<List<DanhGiaKH>>() {
+            @Override
+            public void onResponse(Call<List<DanhGiaKH>> call, Response<List<DanhGiaKH>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    danhGiaKHS.clear();
+                    danhGiaKHS.addAll(response.body());
+                    adapter.notifyDataSetChanged();
+                }
+                else {
+                    Toast.makeText(getApplicationContext().getApplicationContext(), "API Đánh giá sách trả về lỗi", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<List<DanhGiaKH>> call, Throwable t) {
+                // Xử lý lỗi khi gọi API thất bại
+                Toast.makeText(getApplicationContext().getApplicationContext(), "Không thể gọi API Đánh giá sách", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     private void themSach(String maGioHang,String maSach,String soLuong,String donGia) {
         ApiService apiService = ApiController.getRetrofitInstance().create(ApiService.class);

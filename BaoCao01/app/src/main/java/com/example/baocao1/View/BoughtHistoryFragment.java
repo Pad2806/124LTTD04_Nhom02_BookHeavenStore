@@ -32,8 +32,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BoughtHistoryFragment extends Fragment implements DonNhanAdapter.OnItemClickListener{
-    private ImageView icon_back, icon_cancel;
-    private TextView btnRate, btnBuyAgain;
+    private ImageView icon_cancel;
     Dialog dialog;
     private RatingBar ratingBar;
     private RecyclerView recyclerViewDonNhan;
@@ -63,38 +62,6 @@ public class BoughtHistoryFragment extends Fragment implements DonNhanAdapter.On
         icon_cancel = dialog.findViewById(R.id.icon_cancel);
         ratingBar = dialog.findViewById(R.id.ratingBar);
 
-
-//        btnBuyAgain.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(BuyHistoryActivity.this, PaymentActivity.class));
-//            }
-//        });
-//
-//        btnRate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                dialog.show();
-//                startActivity(new Intent(BuyHistoryActivity.this,RatingActivity.class) );
-//            }
-//        });
-//
-//        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-//            @Override
-//            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-//                if (fromUser) {
-//                    Toast.makeText(getApplicationContext(), "Bạn đã đánh giá: " + rating + " sao cho đơn hàng", Toast.LENGTH_SHORT).show();
-//                }
-//                Toast.makeText(getApplicationContext(), "Cảm ơn bạn đã đánh giá!", Toast.LENGTH_SHORT).show();
-//                new Handler().postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        dialog.dismiss();
-//                    }
-//                }, 3000);
-//            }
-//        });
-
         icon_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,6 +70,12 @@ public class BoughtHistoryFragment extends Fragment implements DonNhanAdapter.On
         });
         fetchDonNhan(LoginActivity.MaKhachHang);
         return view;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Gọi lại hàm để tải lại dữ liệu
+        fetchDonNhan(LoginActivity.MaKhachHang);
     }
     private void fetchDonNhan(String MaKhachHang) {
         ApiService apiService = ApiController.getRetrofitInstance().create(ApiService.class);

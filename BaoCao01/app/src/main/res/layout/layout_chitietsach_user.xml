@@ -324,6 +324,25 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/montserrat_medium"/>
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nhận xét từ khách hàng"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewdanhgiakh"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

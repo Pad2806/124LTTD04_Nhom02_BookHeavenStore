@@ -38,7 +38,6 @@ public class AuthorFragment extends Fragment implements TacGiaAdapter.OnItemClic
         view = inflater.inflate(R.layout.fragment_author, container, false);
         recyclerViewTacGia = view.findViewById(R.id.recyclerViewTacGia);
         recyclerViewTacGia.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        recyclerViewTacGia.setAdapter(adapterTG);
         tacGiaList = new ArrayList<>();
         adapterTG = new TacGiaAdapter(tacGiaList,this);
         recyclerViewTacGia.setAdapter(adapterTG);

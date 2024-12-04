@@ -33,10 +33,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class OrderedHistory3011Fragment extends Fragment  implements DonMuaAdapter.OnItemClickListener{
-    private ImageView icon_back;
-    private LinearLayout btnCancelOrder;
-    Dialog dialog, dialog1;
-    private TextView btnCancel, btnAgree;
     private RecyclerView recyclerViewDonMua;
     private DonMuaAdapter adapter;
     private List<DonHang> donHangList;
@@ -53,50 +49,6 @@ public class OrderedHistory3011Fragment extends Fragment  implements DonMuaAdapt
         adapter = new DonMuaAdapter(donHangList,this,getContext());
         recyclerViewDonMua.setAdapter(adapter);
 
-        dialog = new Dialog(getContext());
-        dialog.setContentView(R.layout.layout_dialog_cancelorder);
-        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//        dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_ordersuccess_bg));
-        dialog.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.dialog_ordersuccess_bg));
-        dialog.setCancelable(false);
-
-        dialog1 = new Dialog(getContext());
-        dialog1.setContentView(R.layout.layout_dialog_cancelordersuccessed);
-        Objects.requireNonNull(dialog1.getWindow()).setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//        dialog1.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_ordersuccess_bg));
-        dialog1.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.dialog_ordersuccess_bg));
-        dialog1.setCancelable(false);
-
-        btnCancel = dialog.findViewById(R.id.btnCancel);
-        btnAgree = dialog.findViewById(R.id.buyAgree);
-//        btnCancelOrder.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dialog.show();
-//            }
-//        });
-
-//        btnCancel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(OrderHistoryActivity.this, OrderHistoryActivity.class));
-//            }
-//        });
-//
-//        btnAgree.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dialog.dismiss();
-//                dialog1.show();
-//                new Handler().postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        dialog1.dismiss();
-//                        startActivity(new Intent(OrderHistoryActivity.this, OrderHistoryActivity.class));
-//                    }
-//                }, 1000);
-//            }
-//        });
         fetchDonNhan(LoginActivity.MaKhachHang);
     return view;
     }
