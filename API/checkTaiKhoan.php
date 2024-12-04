@@ -17,13 +17,14 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
     if($row['TrangThai']!=0){
-        echo json_encode(array("message" => "LOCK"));
+        echo json_encode(array("message" => "LOCK", JSON_UNESCAPED_UNICODE));
     }else{
-        echo json_encode(array("message" => "TRUE"));
+        echo json_encode(array("message" => "TRUE", JSON_UNESCAPED_UNICODE));
     }
 }else{
-    echo json_encode(array("message" => "FALSE"));
+    echo json_encode(array("message" => "FALSE", JSON_UNESCAPED_UNICODE));
 }
 
 ?>
