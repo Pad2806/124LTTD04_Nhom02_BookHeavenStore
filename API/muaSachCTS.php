@@ -18,7 +18,7 @@ if ($result && $result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $MaDonHang =$row['ma_don_hang'];
 } else {
-    echo "Không có kết quả hoặc lỗi truy vấn.";
+    echo json_encode(array("message" => "Không có kết quả hoặc lỗi truy vấn.",JSON_UNESCAPED_UNICODE));;
 }
 if($PTTT=='TTTTuyen'){
     $sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai, NgayThanhToan) 
@@ -42,7 +42,7 @@ if ($executeResult) {
         $row = $resultdg->fetch_assoc();
         $MaDanhGia =$row['ma_danh_gia'];
     } else {
-        echo "Không có kết quả hoặc lỗi truy vấn.";
+        echo json_encode(array("message" => "Không có kết quả hoặc lỗi truy vấn.",JSON_UNESCAPED_UNICODE));
     }
     // Cập nhật vào bảng ChiTietDonHang
     $sqlctdh = "INSERT INTO ChiTietDonHang(MaDonHang, MaSach, SoLuong, DonGia, MaDanhGia) 
