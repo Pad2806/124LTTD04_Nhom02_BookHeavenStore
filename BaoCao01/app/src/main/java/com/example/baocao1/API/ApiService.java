@@ -10,6 +10,7 @@ import com.example.baocao1.Model.Sach_DanhGia;
 import com.example.baocao1.Model.Sach_GioHang;
 import com.example.baocao1.Model.TacGia;
 import com.example.baocao1.Model.TheLoai;
+import com.example.baocao1.Model.ThongBao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -138,4 +139,7 @@ public interface ApiService {
 
     @GET("getDanhGia.php")
     Call<List<DanhGiaKH>> getDanhGia(@Query("MaSach") String MaSach);
+
+    @GET("getThongBao.php")
+    Call<List<ThongBao>> getThongBao(@Query("MaKhachHang") String MaKhachHang);
 }

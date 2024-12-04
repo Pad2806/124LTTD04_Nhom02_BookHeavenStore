@@ -283,7 +283,7 @@ public class PaymentActivity extends AppCompatActivity implements SachMuaAdapter
             }
             @Override
             public void onFailure(Call<APICapNhat> call, Throwable t) {
-                Log.d("API", "Lỗi kết nối"+t.getMessage());
+                Log.d("API", "Lỗi kết nối CTS"+t.getMessage());
             }
         });
     }

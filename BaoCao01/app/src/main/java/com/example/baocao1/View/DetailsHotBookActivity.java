@@ -231,7 +231,6 @@ public class DetailsHotBookActivity extends AppCompatActivity {
         fetchDanhGiaKH(maSach);
     }
     private void fetchDanhGiaKH(String masach) {
-        Toast.makeText(getApplicationContext().getApplicationContext(), masach, Toast.LENGTH_SHORT).show();
         ApiService apiService = ApiController.getRetrofitInstance().create(ApiService.class);
         Call<List<DanhGiaKH>> call = apiService.getDanhGia(masach);
         call.enqueue(new Callback<List<DanhGiaKH>>() {
