@@ -2,7 +2,7 @@
 include("connect.php");
 // Trả về dữ liệu dưới dạng JSON
 header('Content-Type: application/json; charset=UTF-8');
-
+$MaKhachHang = $_GET['MaKhachHang'];
 $madh = $_GET['MaDonHang'];
 // $madh='DH00000031';
 
@@ -19,7 +19,10 @@ if ($stmt->execute()) {
 } else {
     echo json_encode(array("message" => "Hủy đơn hàng thất bại.", JSON_UNESCAPED_UNICODE));
 }
-
+$stmtdiem = $conn->prepare("CALL TruDiem(?, ?)");
+$stmtdiem->bind_param("ss", $MaKhachHang, $madh);
+$stmtdiem->execute();
+$stmtdiem->close();
 $stmt->close();
 $conn->close();  // Đóng kết nối sau khi xong
 ?>
