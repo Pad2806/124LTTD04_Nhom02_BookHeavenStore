@@ -21,15 +21,15 @@ if ($result && $result->num_rows > 0) {
     echo json_encode(array("message" => "Không có kết quả hoặc lỗi truy vấn.",JSON_UNESCAPED_UNICODE));;
 }
 if($PTTT=='TTTTuyen'){
-    $sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai, NgayThanhToan) 
-          VALUES(?, ?, ?, ?, ?, ?, CURRENT_DATE, CURRENT_TIME,'Chờ xác nhận', CURRENT_DATE)";
+    $sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TenDonHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai, NgayThanhToan) 
+          VALUES(?, ?, CONCAT('Đơn hàng ', ?), ?, ?, ?, ?, CURRENT_DATE, CURRENT_TIME,'Chờ xác nhận', CURRENT_DATE)";
 }else{
-    $sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai) 
-          VALUES(?, ?, ?, ?, ?, ?, CURRENT_DATE, CURRENT_TIME,'Chờ xác nhận')";
+    $sqldh = "INSERT INTO DonHang(MaDonHang, MaKhachHang, TenDonHang, TongTien, GiamGia, PhiVanChuyen, MaPTTT, NgayDatHang, GioDatHang,TrangThai) 
+          VALUES(?, ?, CONCAT('Đơn hàng ', ?), ?, ?, ?, ?, CURRENT_DATE, CURRENT_TIME,'Chờ xác nhận')";
 }
 
 $stmt = $conn->prepare($sqldh);
-$stmt->bind_param("ssssss", $MaDonHang, $MaKhachHang, $TongTien, $GiamGia, $PhiVanChuyen, $PTTT);
+$stmt->bind_param("sssssss", $MaDonHang, $MaKhachHang, $MaDonHang,  $TongTien, $GiamGia, $PhiVanChuyen, $PTTT);
 $executeResult = $stmt->execute(); // Chạy câu lệnh SQL
 header('Content-Type: application/json; charset=UTF-8');
 
