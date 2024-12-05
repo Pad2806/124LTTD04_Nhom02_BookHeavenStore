@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookHeavenStoreAPI.Controllers
 {
-    [Route("api/tacgia")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class TacGiaController : ControllerBase
     {

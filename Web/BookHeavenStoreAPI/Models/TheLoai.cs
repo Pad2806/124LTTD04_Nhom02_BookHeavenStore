@@ -8,6 +8,6 @@ namespace BookHeavenStoreAPI.Models
         public string MaTheLoai {  get; set; }
         [Required]
         public string TenTheLoai { get; set; }
-        public string HinhAnh {  get; set; }
+        public string? HinhAnh {  get; set; }
     }
 }

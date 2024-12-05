@@ -1,0 +1,129 @@
+﻿@model Tuple<IEnumerable<BookHeavenStoreAPI.Models.Sach>, IEnumerable<BookHeavenStoreAPI.Models.TacGia>, IEnumerable<BookHeavenStoreAPI.Models.TheLoai>, IEnumerable<BookHeavenStoreAPI.Models.NXB>>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Danh sách sản phẩm</h1>
+
+<table class="table" id="sanPhamTable">
+    <thead>
+        <tr>
+            <th>
+                Tên sách
+            </th>
+            <th>
+                Thể loại
+            </th>
+            <th>
+                Tác giả
+            </th>
+            <th>
+                Nhà xuất bản
+            </th>
+            <th>
+                Đơn giá bán
+            </th>
+            <th>
+                Số lượng còn
+            </th>
+            <th>
+                Số lượng bán
+            </th>
+            <th>
+                Điểm đánh giá
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sach in Model.Item1)
+        {
+            <tr>
+                <td style="width: 150px;">
+                    @Html.DisplayFor(modelItem => sach.TenSach)
+                </td>
+                <td>
+                    @{
+                        var theLoai = Model.Item3.FirstOrDefault(tl => tl.MaTheLoai == sach.MaTheLoai);
+                        if (theLoai != null)
+                        {
+                            @theLoai.TenTheLoai
+                        }
+                        else
+                        {
+                            @:
+                        }
+                    }
+                </td>
+                <td>
+                    @{
+                        var tacGia = Model.Item2.FirstOrDefault(tg => tg.MaTacGia == sach.MaTacGia);
+                        if (tacGia != null)
+                        {
+                            @tacGia.TenTacGia
+                        }
+                        else
+                        {
+                            @:
+                        }
+                    }
+                </td>
+                <td>
+                    @{
+                        var nxb = Model.Item4.FirstOrDefault(x => x.MaNXB == sach.MaNXB);
+                        if (nxb != null)
+                        {
+                            @nxb.TenNXB
+                        }
+                        else
+                        {
+                            @:
+                        }
+                    }
+                </td>
+                <td>
+                    @Html.Raw(string.Format("{0:N0} đ", sach.DonGiaBan))
+                </td>
+                <td>
+                    @Html.Raw(string.Format("{0:} quyển", sach.SoLuongCon))
+                </td>
+                <td>
+                    @Html.Raw(string.Format("{0:} quyển", sach.SoLuongBan))
+                </td>
+                <td>
+                    @Html.Raw(string.Format("{0:} sao", sach.DiemDanhGia))
+                </td>
+                <td style="width: 200px; text-align: center;">
+                    <a asp-controller="SanPham" asp-action="SuaSp" asp-route-id="@sach.MaSach"
+                       class="btn btn-success btn-icon-split" style="width: 85px; display: inline-block; text-align: center;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td style="width: 20%; text-align: center;">
+                                    <i class="fa-solid fa-square-pen"></i>
+                                </td>
+                                <td style="text-align: left; padding-left: 8px;">
+                                    Sửa
+                                </td>
+                            </tr>
+                        </table>
+                    </a>
+                    <a asp-controller="SanPham" asp-action="XoaSp" asp-route-id="@sach.MaSach"
+                       class="btn btn-danger btn-icon-split" style="width: 85px; display: inline-block; text-align: center;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td style="width: 20%; text-align: center;">
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                                <td style="text-align: left; padding-left: 8px;">
+                                    Xoá
+                                </td>
+                            </tr>
+                        </table>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

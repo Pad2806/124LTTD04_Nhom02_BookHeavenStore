@@ -10,13 +10,14 @@ namespace BookHeavenStoreAPI.Models
         public string MaDonHang { get; set; }
         [Required]
         public string MaKhachHang { get; set; }
-        public string TenDonHang { get; set; }
+        public string? TenDonHang { get; set; }
         public int TongTien {  get; set; }
-        public int GiamGia { get; set; }
+        public int? GiamGia { get; set; }
         public string TrangThai { get; set; }
-        public int PhiVanChuyen { get; set; }
+        public int? PhiVanChuyen { get; set; }
+        public string MaPTTT { get; set; }
         public DateTime NgayDatHang { get; set; }
-        public DateTime NgayGiaoHang { get; set; }
-        public DateTime NgayThanhToan { get;set; }
+        public DateTime? NgayGiaoHang { get; set; }
+        public DateTime? NgayThanhToan { get;set; }
     }
 }

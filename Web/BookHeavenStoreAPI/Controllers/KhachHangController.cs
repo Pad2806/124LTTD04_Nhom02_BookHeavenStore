@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BookHeavenStoreAPI.Controllers
 {
     [ApiController]
-    [Route("api/khachhang")]
+    [Route("api/[controller]/[action]")]
     public class KhachHangController : ControllerBase
     {
         private readonly DefautConnections _db;
@@ -18,6 +18,8 @@ namespace BookHeavenStoreAPI.Controllers
         public async Task<IActionResult> GetKhachHangs()
         {
             var kh = await _db.KhachHang.ToListAsync();
+            if (kh == null)
+                return NotFound("Không tìm thấy khách hàng");
             return Ok(kh);
         }
 
@@ -32,8 +34,9 @@ namespace BookHeavenStoreAPI.Controllers
             }
             return Ok(khachHang);
         }
+
         [HttpPost]
-        public async Task<IActionResult> PostKhachHang(KhachHang khachHang)
+        public async Task<IActionResult> PostKhachHang([FromBody] KhachHang khachHang)
         {
             khachHang.MaKhachHang = await GenerateMaKhachHang();
             if (string.IsNullOrEmpty(khachHang.MaGioHang) || !_db.GioHang.Any(g => g.MaGioHang == khachHang.MaGioHang))
@@ -46,11 +49,15 @@ namespace BookHeavenStoreAPI.Controllers
                 _db.GioHang.Add(gioHang);
                 await _db.SaveChangesAsync();
             }
+
+            khachHang.NgayDangKy = DateTime.Now;
+            khachHang.TrangThai = false;
             _db.KhachHang.Add(khachHang);
             await _db.SaveChangesAsync();
             //return CreatedAtAction(nameof(GetKhachHangById), new { id = khachHang.MaKhachHang }, khachHang);
             return Ok(khachHang);
         }
+
         [NonAction]
         private async Task<string> GenerateMaKhachHang()
         {
@@ -58,25 +65,26 @@ namespace BookHeavenStoreAPI.Controllers
                 .OrderByDescending(k => k.MaKhachHang)
                 .FirstOrDefaultAsync();
 
-            int nextId = int.Parse(lastKhachHang.MaKhachHang.Substring(2));
+            int nextId = 0;
             if (lastKhachHang != null)
             {
-                nextId = int.Parse(lastKhachHang.MaKhachHang.Substring(2)) + 1;
+                nextId = int.Parse(lastKhachHang.MaKhachHang.Substring(2));
+                nextId++;
             }
-
             return $"KH{nextId:00000000}";
         }
         [NonAction]
         private async Task<string> GenerateMaGioHang()
         {
-            var lastGioHang = await _db.KhachHang
+            var lastGioHang = await _db.GioHang
                 .OrderByDescending(k => k.MaGioHang)
                 .FirstOrDefaultAsync();
 
-            int nextId = int.Parse(lastGioHang.MaGioHang.Substring(2));
+            int nextId = 0;
             if (lastGioHang != null)
             {
-                nextId = int.Parse(lastGioHang.MaGioHang.Substring(2)) + 1;
+                nextId = int.Parse(lastGioHang.MaGioHang.Substring(2));
+                nextId++;
             }
 
             return $"GH{nextId:00000000}";
@@ -90,8 +98,6 @@ namespace BookHeavenStoreAPI.Controllers
             {
                 return NotFound("Không tìm thấy khách hàng.");
             }
-
-            // Cập nhật thông tin
             kh.TenKhachHang = khachHang.TenKhachHang;
             kh.HinhAnh = khachHang.HinhAnh;
             kh.DiaChi = khachHang.DiaChi;
@@ -101,6 +107,7 @@ namespace BookHeavenStoreAPI.Controllers
             kh.NgaySinh = khachHang.NgaySinh;
             kh.HangThanhVien = khachHang.HangThanhVien;
             kh.NgayDangKy = khachHang.NgayDangKy;
+            kh.TrangThai = khachHang.TrangThai;
 
             _db.KhachHang.Update(kh);
             await _db.SaveChangesAsync();

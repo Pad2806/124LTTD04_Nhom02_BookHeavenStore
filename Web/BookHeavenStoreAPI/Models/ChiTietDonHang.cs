@@ -10,8 +10,8 @@ namespace BookHeavenStoreAPI.Models
         public string MaSach {  get; set; }
         public int SoLuong { get; set; }
         public int ThanhTien { get; set; }
-        public string MaDanhGia { get; set; }
-        public int DanhGia { get; set; }
-        public string NoiDung {  get; set; }
+        public string? MaDanhGia { get; set; }
+        public int? DanhGia { get; set; }
+        public string? NoiDung {  get; set; }
     }
 }

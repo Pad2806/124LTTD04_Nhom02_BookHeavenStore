@@ -8,7 +8,7 @@ namespace BookHeavenStoreAPI.Models
         public string MaNXB { get; set; }
         [Required]
         public string TenNXB { get; set; }
-        public string DiaChi { get; set; }
-        public string Email { get; set; }
+        public string? DiaChi { get; set; }
+        public string? Email { get; set; }
     }
 }

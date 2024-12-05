@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookHeavenStoreAPI.Controllers
 {
-    [Route("api/theloai")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class TheLoaiController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace BookHeavenStoreAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetTheLoais()
         {
-            var tl = _db.TheLoai.ToListAsync();
+            var tl = await _db.TheLoai.ToListAsync();
             return Ok(tl);
         }
 

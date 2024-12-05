@@ -1,0 +1,139 @@
+﻿@model Tuple<IEnumerable<BookHeavenStoreAPI.Models.DonHang>, IEnumerable<BookHeavenStoreAPI.Models.KhachHang>>
+@{
+    ViewData["Title"] = "Danh sách đơn hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Danh sách đơn hàng</h1>
+
+<table class="table" id="donHangTable">
+    <thead>
+        <tr>
+            <th>
+                Mã đơn hàng
+            </th>
+            <th>
+                Tên khách hàng
+            </th>
+            <th>
+                Tổng tiền
+            </th>
+            <th>
+                Giảm giá
+            </th>
+            <th>
+                Ngày đặt hàng
+            </th>
+            <th>
+                Ngày giao hàng
+            </th>
+            <th>
+                Ngày thanh toán
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var donHang in Model.Item1)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => donHang.MaDonHang)
+                </td>
+                <td>
+                    @{
+                        var khachHang = Model.Item2.FirstOrDefault(kh => kh.MaKhachHang == donHang.MaKhachHang);
+                        if (khachHang != null)
+                        {
+                            @khachHang.TenKhachHang
+                        }
+                        else
+                        {
+                            @:
+                        }
+                    }
+                </td>
+                <td>
+                    @Html.Raw(string.Format("{0:N0} đ", donHang.TongTien))
+                </td>
+
+                <td>
+                    @Html.Raw(string.Format("{0:N0} đ", donHang.GiamGia))
+                </td>
+                <td>
+                    @Html.Raw(donHang.NgayDatHang.ToString("dd/MM/yyyy"))
+                </td>
+                <td>
+                    @Html.Raw(donHang.NgayGiaoHang.HasValue ? donHang.NgayGiaoHang.Value.ToString("dd/MM/yyyy") : "--/--/----")
+                </td>
+                <td>
+                    @Html.Raw(donHang.NgayThanhToan.HasValue ? donHang.NgayThanhToan.Value.ToString("dd/MM/yyyy") : "--/--/----")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => donHang.TrangThai)
+                </td>
+                <td style="width: 250px; text-align: center;">
+                    <div style="display: flex; justify-content: center; gap: 10px;">
+                        @if (donHang.TrangThai == "Chờ xác nhận")
+                        {
+                            <a asp-controller="DonHang" asp-action="XacNhanDon" asp-route-id="@donHang.MaDonHang"
+                               class="btn btn-success btn-icon-split"
+                               style="width: 100px; display: inline-block; text-align: center;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="width: 20%; text-align: center;">
+                                            <i class="fa-solid fa-circle-check"></i>
+                                        </td>
+                                        <td style="text-align: left; padding-left: 8px;">
+                                            Duyệt
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+
+                            <a asp-controller="DonHang" asp-action="HuyDon" asp-route-id="@donHang.MaDonHang"
+                               class="btn btn-danger btn-icon-split"
+                               style="width: 100px; display: inline-block; text-align: center;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="width: 20%; text-align: center;">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </td>
+                                        <td style="text-align: left; padding-left: 8px;">
+                                            Huỷ
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        }
+                        else if (donHang.TrangThai == "Đã giao" || donHang.TrangThai == "Đã huỷ")
+                        {
+                            <span style="display: inline-block; width: 100px; text-align: center;"></span>
+                        }
+                        else
+                        {
+                            <a asp-controller="DonHang" asp-action="GiaoHang" asp-route-id="@donHang.MaDonHang"
+                               class="btn btn-primary btn-icon-split"
+                               style="width: 140px; display: inline-block; text-align: center;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="width: 20%; text-align: center;">
+                                            <i class="fa-solid fa-truck"></i>
+                                        </td>
+                                        <td style="text-align: left; padding-left: 8px;">
+                                            Giao hàng
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        }
+                    </div>
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>

@@ -8,7 +8,7 @@ namespace BookHeavenStoreAPI.Models
         public string MaTacGia {  get; set; }
         [Required]
         public string TenTacGia { get; set; }
-        public int SoLuongTP { get; set; }
-        public string HinhAnh {  get; set; }
+        public int? SoLuongTP { get; set; }
+        public string? HinhAnh {  get; set; }
     }
 }

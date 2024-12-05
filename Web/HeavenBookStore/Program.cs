@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<StoreDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
-        new MySqlServerVersion(new Version(8, 0, 30)) // Thay phiên bản MySQL của bạn
+        new MySqlServerVersion(new Version(8, 0, 30))
     ));
 
 var app = builder.Build();

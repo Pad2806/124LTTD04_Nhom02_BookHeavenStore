@@ -1,0 +1,120 @@
+﻿@model IEnumerable<KhachHang>
+
+@{
+    ViewData["Title"] = "Danh sách khách hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Danh sách khách hàng</h1>
+
+<table class="table" id="khachHangTable">
+    <thead>
+        <tr>
+            <th>
+                Tên khách hàng
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Mật khẩu
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Số điện thoại
+            </th>
+            <th>
+                Ngày sinh
+            </th>
+            <th>
+                Ngày đăng ký
+            </th>
+            <th>
+                Hạng thành viên
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="width: 150px;">
+                    @Html.DisplayFor(modelItem => item.TenKhachHang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatKhau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDT)
+                </td>
+                <td style="width: 150px;">
+                    @Html.Raw(item.NgaySinh.HasValue ? item.NgaySinh.Value.ToString("dd/MM/yyyy") : "--/--/----")
+                </td>
+                <td style="width: 150px;">
+                    @Html.Raw(item.NgayDangKy.ToString("dd/MM/yyyy"))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HangThanhVien)
+                </td>
+                <td>
+                    @if (item.TrangThai == false)
+                    {
+                        <span>Bình thường</span>
+                    }
+                    else if (item.TrangThai == true)
+                    {
+                        <span>Đã khoá</span>
+                    }
+                </td>
+                <td style="width: 150px; text-align: center;">
+                    @if (item.TrangThai == false)
+                    {
+                        <a asp-controller="KhachHang" asp-action="KhoaKH" asp-route-id="@item.MaKhachHang"
+                           class="btn btn-danger btn-icon-split" style="width: 126px; display: inline-block; text-align: center;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="width: 20%; text-align: center;">
+                                        <i class="fa-solid fa-lock"></i>
+                                    </td>
+                                    <td style="text-align: left; padding-left: 8px;">
+                                        Khoá
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    }
+                    else if (item.TrangThai == true)
+                    {
+                        <a asp-controller="KhachHang" asp-action="KhoaKH" asp-route-id="@item.MaKhachHang"
+                           class="btn btn-danger btn-icon-split" style="width: 126px; display: inline-block; text-align: center;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="width: 20%; text-align: center;">
+                                        <i class="fa-solid fa-lock-open"></i>
+                                    </td>
+                                    <td style="text-align: left; padding-left: 8px;">
+                                        Mở khoá
+                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                    }
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>

@@ -6,7 +6,6 @@ namespace BookHeavenStoreAPI.Models
     {
         [Key] 
         public string MaGioHang { get; set; }
-        [Required]
-        public int TongTien { get; set; }
+        public int? TongTien { get; set; }
     }
 }

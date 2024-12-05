@@ -1,0 +1,183 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Doanh thu (trong tháng)
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                @(ViewBag.doanhThuTheoThang != null ? ((int)ViewBag.doanhThuTheoThang).ToString("C0") : "0 đ")
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Sản phẩm đã bán (trong tháng)
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@(ViewBag.sachDaBan != 0 ? ViewBag.sachDaBan + " sản phẩm" : "0 sản phẩm")</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Tổng đơn hàng (trong tháng)
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">@(ViewBag.soLuongDonHang != 0 ? ViewBag.soLuongDonHang + " đơn hàng" : "0 đơn hàng")</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-12">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* <script type="module" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var chart = document.getElementById('chart').getContext('2d');
+        var doanhThuTheoNam = @Html.Raw(JsonConvert.SerializeObject(ViewBag.DoanhThuTrongNam));
+        console.log(@Html.Raw(JsonConvert.SerializeObject(ViewBag.DoanhThuTrongNam)));
+        if (doanhThuTheoNam && doanhThuTheoNam.length > 0) {
+            var labels = doanhThuTheoNam.map(function (item) {
+                return item.Month + '/' + item.Year;
+            });
+            var data = doanhThuTheoNam.map(function (item) {
+                return item.Total;
+            });
+
+            var chartt = new Chart(chart, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Doanh thu',
+                        data: data,
+                        backgroundColor: 'rgba(0, 119, 204, 0.3)',
+                        borderColor: 'rgba(0, 119, 204, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        } else {
+            console.log("Dữ liệu doanh thu không hợp lệ hoặc rỗng.");
+        }
+</script> *@
+<script type="module" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var chart = document.getElementById('chart').getContext('2d');
+        var doanhThuTheoNam = @Html.Raw(JsonConvert.SerializeObject(ViewBag.DoanhThuTrongNam));
+        if (doanhThuTheoNam && doanhThuTheoNam.length > 0) {
+            var labels = doanhThuTheoNam.map(function (item) {
+                return item.month + '/' + item.year;
+            });
+            var data = doanhThuTheoNam.map(function (item) {
+                return item.total;
+            });
+
+            console.log(doanhThuTheoNam); console.log('Labels:', labels);
+            console.log('Data:', data);
+
+            var chartt = new Chart(chart, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Doanh thu',
+                        data: data,
+                        backgroundColor: 'rgba(0, 119, 204, 0.3)',
+                        borderColor: 'rgba(0, 119, 204, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        } else {
+            console.log("Dữ liệu doanh thu không hợp lệ hoặc rỗng.");
+        }
+    });
+</script>

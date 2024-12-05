@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BookHeavenStoreAPI.Controllers
 {
     [ApiController]
-    [Route("api/sach")]
+    [Route("api/[controller]/[action]")]
     public class SachController : ControllerBase
     {
         private readonly DefautConnections _db;
