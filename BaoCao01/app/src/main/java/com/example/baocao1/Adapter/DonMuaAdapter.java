@@ -83,7 +83,12 @@ public class DonMuaAdapter extends RecyclerView.Adapter<DonMuaAdapter.DonDatView
         if (donhang.getTrangThai().equals("Đã hủy")) {
             holder.btnhuy.setVisibility(View.GONE);
             holder.btndahuy.setVisibility(View.VISIBLE);
-        } else {
+        }
+        else if (donhang.getTrangThai().equals("Đang giao")) {
+            holder.btnhuy.setVisibility(View.GONE);
+            holder.btndahuy.setVisibility(View.GONE);
+        }
+        else {
             // Nếu chưa hủy, kiểm tra thời gian
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
             try {
